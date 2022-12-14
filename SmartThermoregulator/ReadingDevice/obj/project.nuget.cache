@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "78czGv5Ndch8JR4HF3A/0y2nt+Ay2bZOWrKBP5hGmLynAJMveyiHXO/pUgv6vnz2nxSuZbXjwn9wqaFadp7YUw==",
+  "success": true,
+  "projectFilePath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj",
+  "expectedPackageFiles": [
+    "/Users/zeka/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/zeka/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VN1SwIYOYpAVpWzcQCAd4yR57Ke5AMJBvDvZVSaaZjJ+Z3IH+B27XBfvfS3G3TIFUSgQvjaSVOA2uqfH1dSEUw==",
+  "success": true,
+  "projectFilePath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj",
+  "expectedPackageFiles": [
+    "/Users/zeka/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/zeka/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

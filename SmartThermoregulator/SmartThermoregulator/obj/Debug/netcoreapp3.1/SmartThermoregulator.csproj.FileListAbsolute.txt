@@ -1,0 +1,14 @@
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/bin/Debug/netcoreapp3.1/SmartThermoregulator
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/bin/Debug/netcoreapp3.1/SmartThermoregulator.deps.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/bin/Debug/netcoreapp3.1/SmartThermoregulator.runtimeconfig.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/bin/Debug/netcoreapp3.1/SmartThermoregulator.runtimeconfig.dev.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/bin/Debug/netcoreapp3.1/SmartThermoregulator.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/bin/Debug/netcoreapp3.1/SmartThermoregulator.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.csproj.AssemblyReference.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.AssemblyInfoInputs.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.AssemblyInfo.cs
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.csproj.CoreCompileInputs.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/Debug/netcoreapp3.1/SmartThermoregulator.genruntimeconfig.cache

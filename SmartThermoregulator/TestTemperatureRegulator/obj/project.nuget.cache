@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4aEA2eryLartUhJd70WkUmy9v9GkE3XxfxdyR89F4pIAxNaoH2dMINKSJ/YVnwbXHlOs6kgPYeWBx/dFUPTvNg==",
+  "success": true,
+  "projectFilePath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/TestTemperatureRegulator.csproj",
+  "expectedPackageFiles": [
+    "/Users/zeka/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/zeka/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
