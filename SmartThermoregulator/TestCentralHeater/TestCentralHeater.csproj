@@ -8,4 +8,14 @@
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\CentralHeater\CentralHeater.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="NUnit3TestAdapter" />
+    <None Remove="Microsoft.NET.Test.Sdk" />
+    <None Remove="NUnit" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+  </ItemGroup>
 </Project>
