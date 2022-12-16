@@ -5,6 +5,7 @@ namespace ReadingDevice
 {
     public class ReadingDevice
     {
+        private int a;
     }
 }
 
