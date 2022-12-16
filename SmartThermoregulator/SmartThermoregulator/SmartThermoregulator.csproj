@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\CentralHeater\CentralHeater.csproj" />
+    <ProjectReference Include="..\ReadingDevice\ReadingDevice.csproj" />
+    <ProjectReference Include="..\TemperatureRegulator\TemperatureRegulator.csproj" />
+  </ItemGroup>
 </Project>

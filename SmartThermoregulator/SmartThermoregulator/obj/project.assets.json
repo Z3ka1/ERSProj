@@ -1,39 +1,126 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "CentralHeater/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CentralHeater.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CentralHeater.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
+      "ReadingDevice/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ReadingDevice.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ReadingDevice.dll": {}
+        }
+      },
+      "TemperatureRegulator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TemperatureRegulator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TemperatureRegulator.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CentralHeater/1.0.0": {
+      "type": "project",
+      "path": "../CentralHeater/CentralHeater.csproj",
+      "msbuildProject": "../CentralHeater/CentralHeater.csproj"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
+    "ReadingDevice/1.0.0": {
+      "type": "project",
+      "path": "../ReadingDevice/ReadingDevice.csproj",
+      "msbuildProject": "../ReadingDevice/ReadingDevice.csproj"
+    },
+    "TemperatureRegulator/1.0.0": {
+      "type": "project",
+      "path": "../TemperatureRegulator/TemperatureRegulator.csproj",
+      "msbuildProject": "../TemperatureRegulator/TemperatureRegulator.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "CentralHeater >= 1.0.0",
+      "Common >= 1.0.0",
+      "ReadingDevice >= 1.0.0",
+      "TemperatureRegulator >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\admina\\.nuget\\packages\\": {}
+    "/Users/zeka/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\SmartThermoregulator.csproj",
+      "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/SmartThermoregulator.csproj",
       "projectName": "SmartThermoregulator",
-      "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\SmartThermoregulator.csproj",
-      "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-      "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\obj\\",
+      "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/SmartThermoregulator.csproj",
+      "packagesPath": "/Users/zeka/.nuget/packages/",
+      "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/zeka/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj": {
+              "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj"
+            },
+            "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+              "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
+            },
+            "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj": {
+              "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj"
+            },
+            "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj": {
+              "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -51,16 +138,31 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[3.1.31, 3.1.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }
