@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/Users/zeka/.dotnet/store/|arch|/|tfm|",
-      "/Users/zeka/.nuget/packages"
+      "C:\\Users\\admina\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\admina\\.nuget\\packages"
     ]
   }
 }
