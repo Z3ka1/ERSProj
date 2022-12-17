@@ -32,8 +32,12 @@ namespace CentralHeater
         // Metoda koja vraca ukupno vreme koliko je grejac bio ukljucen
         public TimeSpan GetRunTime()
         {
+
             return runTime;
+       
         }
+
+
 
     }
 }
