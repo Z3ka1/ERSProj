@@ -1,14 +1,20 @@
 ﻿<Properties StartupConfiguration="{8BC2F379-DA43-4684-8A7B-115AF211DE9D}|Default" VersionControlDisabled="True">
-  <MonoDevelop.Ide.ItemProperties.TestTemperatureRegulator FirstBuild="True" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SmartThermoregulator PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.TestCentralHeater FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="SmartThermoregulator/Program.cs">
     <Files>
-      <File FileName="Common/Constants.cs" Line="13" Column="62" />
+      <File FileName="Common/Constants.cs" />
       <File FileName="Common/Globals.cs" />
       <File FileName="Common/IReadingDevice.cs" />
-      <File FileName="ReadingDevice/ReadingDevice.cs" />
-      <File FileName="SmartThermoregulator/Program.cs" Line="10" Column="13" />
+      <File FileName="SmartThermoregulator/Program.cs" Line="8" Column="10" />
+      <File FileName="ReadingDevice/ReadingDevice.cs" Line="37" Column="1" />
+      <File FileName="TestReadingDevice/TestReadingDevice.cs" Line="26" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,16 +26,18 @@
               <Node name="Dependencies" expanded="True" />
               <Node name="Program.cs" selected="True" />
             </Node>
+            <Node name="TestReadingDevice" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="SmartThermoregulator" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.TestReadingDevice FirstBuild="True" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.TestCentralHeater FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.SmartThermoregulator PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TestTemperatureRegulator FirstBuild="True" />
 </Properties>
