@@ -6,6 +6,32 @@ namespace SmartThermoregulator
     {
         static void Main(string[] args)
         {
+            string com;
+
+            int od;     //Temperatura od koje pocinje dnevni rezim
+            int doo;    //Temperatura do koje traje dnevni rezim
+            int temperaturaDnevnog;     // Temperatura dnevnog rezima
+            int temperaturaNocnog;      //Temperatura nocnog rezima
+
+
+                Console.WriteLine("Unesite od koliko sati pocinje dnevni rezim!");
+                com = Console.ReadLine();
+                od = Int32.Parse(com);
+                Console.WriteLine("Unesite do koliko sati traje dnevni rezim!");
+                com = Console.ReadLine();
+                doo = Int32.Parse(com);
+                Console.WriteLine("Unesite temperaturu dnevnog rezima!");
+                com = Console.ReadLine();
+                temperaturaDnevnog = Int32.Parse(com);
+                Console.WriteLine("Unesite temperaturu nocnog rezima!");
+                com = Console.ReadLine();
+                temperaturaNocnog = Int32.Parse(com);
+                Console.WriteLine("Izvrsavanje...");
+
+
+
+
+
             //Test ReadingDevice
             //ReadingDevice.ReadingDevice rd1 = new ReadingDevice.ReadingDevice();
             //ReadingDevice.ReadingDevice rd2 = new ReadingDevice.ReadingDevice();
@@ -36,9 +62,6 @@ namespace SmartThermoregulator
 
 
 
-
-
-            Console.WriteLine("Hello World!");
 
 
             Console.ReadLine();
