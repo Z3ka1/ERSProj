@@ -14,6 +14,8 @@ namespace SmartThermoregulator
             int temperaturaNocnog;      //Temperatura nocnog rezima
 
 
+
+            //TODO Izmeniti ucitavanje vremena, napraviti zastitu unosa
                 Console.WriteLine("Unesite od koliko sati pocinje dnevni rezim!");
                 com = Console.ReadLine();
                 od = Int32.Parse(com);

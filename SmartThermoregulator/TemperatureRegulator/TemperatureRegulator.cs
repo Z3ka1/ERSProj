@@ -3,9 +3,10 @@ using Common;
 
 namespace TemperatureRegulator
 {
-
+    //TODO Naslediti ITemperatureRegulator
     public class TemperatureRegulator
     {
+        //TODO prebaciti u common Consts
         private const int DEFAULT_DAY_TEMPERATURE = 22;
         private const int DEFAULT_NIGHT_TEMPERATURE = 18;
 

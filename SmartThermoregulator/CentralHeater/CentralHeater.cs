@@ -3,6 +3,7 @@ using Common;
 
 namespace CentralHeater
 {
+    //TODO Naslediti ICentralHeater
     public class CentralHeater
     {
         // Privatno polje koje cuva vreme kada je grejac ukljucen

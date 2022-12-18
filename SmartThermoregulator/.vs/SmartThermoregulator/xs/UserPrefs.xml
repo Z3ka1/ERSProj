@@ -12,23 +12,29 @@
       <File FileName="Common/Constants.cs" />
       <File FileName="Common/Globals.cs" />
       <File FileName="Common/IReadingDevice.cs" />
-      <File FileName="SmartThermoregulator/Program.cs" Line="8" Column="10" />
-      <File FileName="ReadingDevice/ReadingDevice.cs" Line="37" Column="1" />
-      <File FileName="TestReadingDevice/TestReadingDevice.cs" Line="26" Column="15" />
+      <File FileName="SmartThermoregulator/Program.cs" Line="27" Column="1" />
+      <File FileName="ReadingDevice/ReadingDevice.cs" />
+      <File FileName="TestReadingDevice/TestReadingDevice.cs" />
+      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="6" Column="43" />
+      <File FileName="CentralHeater/CentralHeater.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SmartThermoregulator" expanded="True">
+            <Node name="CentralHeater" expanded="True" />
             <Node name="Common" expanded="True" />
             <Node name="ReadingDevice" expanded="True" />
             <Node name="SmartThermoregulator" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Program.cs" selected="True" />
             </Node>
+            <Node name="TemperatureRegulator" expanded="True" />
+            <Node name="TestCentralHeater" expanded="True" />
             <Node name="TestReadingDevice" expanded="True">
               <Node name="Dependencies" expanded="True" />
             </Node>
+            <Node name="TestTemperatureRegulator" expanded="True" />
           </Node>
         </State>
       </Pad>

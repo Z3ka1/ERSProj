@@ -19,6 +19,7 @@ namespace ReadingDevice
         }
 
         //Salje temperaturu regulatoru
+        //Metoda ce se verovatno menjati (ukoliko moze bez Client/Server)
         public void sendTemperature()
         {
             //Konektovanje na server (Regulator)
