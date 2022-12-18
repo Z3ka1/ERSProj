@@ -5,6 +5,12 @@ namespace Common
 	{
 		public int Id { get; set; }
 		public double Temperature { get; set; }
-	}
+
+
+        public void sendTemperature();
+        public void raiseTemperature();
+
+
+    }
 }
 
