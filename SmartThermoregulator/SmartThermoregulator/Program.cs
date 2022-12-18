@@ -44,8 +44,7 @@ namespace SmartThermoregulator
             //Console.WriteLine(rd1);
             //
 
-
-
+         
 
             //TemperatureRegulator.TemperatureRegulator tr = new TemperatureRegulator.TemperatureRegulator();
             //tr.SetMode("cooling");
@@ -58,6 +57,8 @@ namespace SmartThermoregulator
 
             //Console.WriteLine("Trenutni rezim rada:" + currentMode);
             // Console.WriteLine("Trenutna temperatura:" + currentTemperature);
+
+
 
 
 
