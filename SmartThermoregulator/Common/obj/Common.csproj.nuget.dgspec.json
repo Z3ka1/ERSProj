@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {}
+    "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+    "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
+        "projectUniqueName": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\SANJA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\obj\\",
+        "projectPath": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\Smiljana\\.nuget\\packages\\",
+        "outputPath": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SANJA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Smiljana\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

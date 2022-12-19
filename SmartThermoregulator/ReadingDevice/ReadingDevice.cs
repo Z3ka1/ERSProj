@@ -2,6 +2,7 @@
 using Common;
 using System.Net.Sockets;
 using System.Text;
+using System.IO;
 
 namespace ReadingDevice
 {
@@ -32,6 +33,11 @@ namespace ReadingDevice
             stream.Write(data, 0, data.Length);
 
 
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                Log($"ReadingDevice ID={Id} je poslao temperaturu: {Temperature}", w);
+            }
+
 
             client.Close();
         }
@@ -48,6 +54,24 @@ namespace ReadingDevice
             string s = "Id: " + Id + " Temperature: " + Temperature.ToString("0.00"); 
             return s;
         }
+
+
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
+            w.WriteLine($"  :  {logMessage}");
+            w.WriteLine("-------------------------------");
+        }
+
+        public static void DumpLog(StreamReader r)
+        {
+            string line;
+            while ((line = r.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
     }
 }
 

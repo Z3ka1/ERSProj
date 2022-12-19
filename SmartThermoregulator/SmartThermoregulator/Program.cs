@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace SmartThermoregulator
 {
@@ -72,7 +73,15 @@ namespace SmartThermoregulator
                 Console.WriteLine("Izvrsavanje...");
 
 
+            using (StreamWriter w = File.AppendText("log.txt"))
+            {
+                Log($"Ovde se unosi poruka koja se ispisuje u logeru", w);
+            }
 
+            using (StreamReader r = File.OpenText("log.txt"))
+            {
+                DumpLog(r);
+            }
 
 
             //Test ReadingDevice
@@ -87,7 +96,7 @@ namespace SmartThermoregulator
             //Console.WriteLine(rd1);
             //
 
-         
+
 
             //TemperatureRegulator.TemperatureRegulator tr = new TemperatureRegulator.TemperatureRegulator();
             //tr.SetMode("cooling");
@@ -109,6 +118,22 @@ namespace SmartThermoregulator
 
 
             Console.ReadLine();
+        }
+
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
+            w.WriteLine($"  :  {logMessage}");
+            w.WriteLine("-------------------------------");
+        }
+
+        public static void DumpLog(StreamReader r)
+        {
+            string line;
+            while ((line = r.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }

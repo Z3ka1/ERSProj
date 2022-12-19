@@ -4660,24 +4660,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SANJA\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Smiljana\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TestCentralHeater\\TestCentralHeater.csproj",
+      "projectUniqueName": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\TestCentralHeater\\TestCentralHeater.csproj",
       "projectName": "TestCentralHeater",
-      "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TestCentralHeater\\TestCentralHeater.csproj",
-      "packagesPath": "C:\\Users\\SANJA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TestCentralHeater\\obj\\",
+      "projectPath": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\TestCentralHeater\\TestCentralHeater.csproj",
+      "packagesPath": "C:\\Users\\Smiljana\\.nuget\\packages\\",
+      "outputPath": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\TestCentralHeater\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\SANJA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Smiljana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4691,11 +4686,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
-              "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj"
+            "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
+              "projectPath": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj"
             },
-            "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-              "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+            "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+              "projectPath": "D:\\SADESKTOPA\\Dusan\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
             }
           }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Common;
 
 namespace CentralHeater
@@ -20,6 +21,11 @@ namespace CentralHeater
             {
                 startTime = DateTime.Now;
                 runTime = TimeSpan.Zero;
+
+                using (StreamWriter w = File.AppendText("log.txt"))
+                {
+                    Log($"Grijac se upalio", w);
+                }
             }
             // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
 
@@ -27,6 +33,11 @@ namespace CentralHeater
             {
                 runTime = DateTime.Now - startTime;
 
+
+                using (StreamWriter w = File.AppendText("log.txt"))
+                {
+                    Log($"Grijac se ugasio", w);
+                }
             }
         }
 
@@ -38,7 +49,12 @@ namespace CentralHeater
        
         }
 
-
+        public static void Log(string logMessage, TextWriter w)
+        {
+            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
+            w.WriteLine($"  :  {logMessage}");
+            w.WriteLine("-------------------------------");
+        }
 
     }
 }
