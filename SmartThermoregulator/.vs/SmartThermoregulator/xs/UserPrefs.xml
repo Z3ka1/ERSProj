@@ -9,14 +9,11 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="SmartThermoregulator/Program.cs">
     <Files>
-      <File FileName="Common/Constants.cs" />
-      <File FileName="Common/Globals.cs" />
-      <File FileName="Common/IReadingDevice.cs" />
-      <File FileName="SmartThermoregulator/Program.cs" Line="27" Column="1" />
-      <File FileName="ReadingDevice/ReadingDevice.cs" />
-      <File FileName="TestReadingDevice/TestReadingDevice.cs" />
-      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="6" Column="43" />
-      <File FileName="CentralHeater/CentralHeater.cs" />
+      <File FileName="Common/Constants.cs" Line="16" Column="22" />
+      <File FileName="Common/ITemperatureRegulator.cs" Line="16" Column="1" />
+      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="85" Column="1" />
+      <File FileName="ReadingDevice/ReadingDevice.cs" Line="85" Column="1" />
+      <File FileName="SmartThermoregulator/Program.cs" Line="14" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,17 +21,14 @@
           <Node name="SmartThermoregulator" expanded="True">
             <Node name="CentralHeater" expanded="True" />
             <Node name="Common" expanded="True" />
-            <Node name="ReadingDevice" expanded="True" />
+            <Node name="ReadingDevice" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
             <Node name="SmartThermoregulator" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Program.cs" selected="True" />
             </Node>
             <Node name="TemperatureRegulator" expanded="True" />
-            <Node name="TestCentralHeater" expanded="True" />
-            <Node name="TestReadingDevice" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-            </Node>
-            <Node name="TestTemperatureRegulator" expanded="True" />
           </Node>
         </State>
       </Pad>

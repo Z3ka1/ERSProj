@@ -13,8 +13,14 @@ namespace Common
 		//Broj za koji se menja temperatura kada je grejac ukljucen
 		public const double ReadingDeviceTempChange = 0.01; //Celsius
 
+		//Lokalna IP adresa
+		public const string localIpAddress = "127.0.0.1";
+
 		//Port za komunikaciju izmedju uredjaja i regulatora (Gde uredjaj salje regulatoru trenutnu temperaturu)
 		public const int PortDeviceRegulator = 21000;
+
+		//Port za komunikaciju izmedju regulatora i uredjaja (Gde regulator salje poruku da je grejanje zapoceto)
+		public const int PortRegulatorDevice = 21001;
 	}
 }
 
