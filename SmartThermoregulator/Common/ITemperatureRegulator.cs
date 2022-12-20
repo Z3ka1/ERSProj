@@ -9,6 +9,8 @@ namespace Common
 
 
         public int GetTemperature(int hour);
+
+        public void receiveTemperature();
     }
 }
 

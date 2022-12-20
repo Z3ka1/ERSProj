@@ -11,6 +11,7 @@ namespace ReadingDevice
         public int Id { get; set; }
         public double Temperature { get; set; }
 
+        //TODO Promeniti generisanje IDa ovako nece raditi
         public ReadingDevice()
         {
             Id = Common.Globals.GeneratorIdReadingDevice;
@@ -28,7 +29,7 @@ namespace ReadingDevice
             NetworkStream stream = client.GetStream();
 
             //Slanje poruke sa temperaturom regulatoru
-            string message = Temperature.ToString();
+            string message = Id.ToString() + "," + Temperature.ToString();
             byte[] data = Encoding.UTF8.GetBytes(message);
             stream.Write(data, 0, data.Length);
 
@@ -72,6 +73,21 @@ namespace ReadingDevice
             }
         }
 
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //ReadingDevice rd = new ReadingDevice();
+
+            //rd.sendTemperature();
+
+
+            Console.WriteLine("Test");
+
+            Console.ReadLine();
+        }
     }
 }
 

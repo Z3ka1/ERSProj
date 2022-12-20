@@ -1,12 +1,30 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace SmartThermoregulator
 {
     class Program
     {
+        //TODO Sve iz main metode prebaciti u pripadajuce klase
         static void Main(string[] args)
         {
+            //ProcessStartInfo startInfo = new ProcessStartInfo();
+            //startInfo.FileName = "./ReadingDevice";
+            //startInfo.UseShellExecute = true;
+
+            //Process process = Process.Start(startInfo);
+
+            //if (process == null)
+            //    Console.WriteLine("Failed");
+
+            //if (process.HasExited)
+            //{
+            //    Console.WriteLine("Process exited with code {0}", process.ExitCode);
+            //}
+
+            //Process.Start("ReadingDevice");
+
             string com;
 
             int od;     //Temperatura od koje pocinje dnevni rezim
@@ -16,7 +34,6 @@ namespace SmartThermoregulator
 
 
 
-            //TODO Izmeniti ucitavanje vremena, napraviti zastitu unosa 
             while (true)
             {
                 Console.WriteLine("Unesite od koliko sati pocinje dnevni rezim!");
@@ -84,17 +101,6 @@ namespace SmartThermoregulator
             }
 
 
-            //Test ReadingDevice
-            //ReadingDevice.ReadingDevice rd1 = new ReadingDevice.ReadingDevice();
-            //ReadingDevice.ReadingDevice rd2 = new ReadingDevice.ReadingDevice();
-
-            //Console.WriteLine(rd1);
-            //Console.WriteLine(rd2);
-
-            //Console.WriteLine();
-            //rd1.raiseTemperature();
-            //Console.WriteLine(rd1);
-            //
 
 
 
