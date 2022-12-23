@@ -3,6 +3,7 @@ using Common;
 using System.Net.Sockets;
 using System.Text;
 using System.IO;
+using System.Threading;
 
 namespace ReadingDevice
 {
@@ -14,11 +15,13 @@ namespace ReadingDevice
         //TODO Promeniti generisanje IDa ovako nece raditi
         public ReadingDevice()
         {
-            Id = Common.Globals.GeneratorIdReadingDevice;
-            //Setuje temperaturu na random vrednost izmedju 15 i 25
-            Temperature = 15 + (new Random()).NextDouble() * 10;
-            Common.Globals.GeneratorIdReadingDevice++;
         }
+
+        public void SendInitialMessage(int id, double temperature)
+        {
+                                                                // Ovde treba povezati sa serverom da upisemo ID i inicijalnu temperaturu i da registrujemo ReadingDevice na TemperatureRegulator
+        }
+
 
         //Salje temperaturu regulatoru
         //Metoda ce se verovatno menjati (ukoliko moze bez Client/Server)
@@ -77,17 +80,69 @@ namespace ReadingDevice
 
     class Program
     {
+        static ReadingDevice readingDevice = new ReadingDevice();
+        static Mutex m = new Mutex();
         static void Main(string[] args)
         {
-            //ReadingDevice rd = new ReadingDevice();
 
-            //rd.sendTemperature();
+            while (true)
+            {
+                Console.WriteLine("Unesite ID:");
+                if (Int32.TryParse(Console.ReadLine(), out int id))
+                {
+                    readingDevice.Id = id;
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine("Unesite inicijalnu temperaturu:");
+                if (double.TryParse(Console.ReadLine(), out double temp) && temp >= 0 && temp <= 35)
+                {
+                    readingDevice.Temperature = temp;
+                    break;
+                }
+            }
+
+           readingDevice.SendInitialMessage(readingDevice.Id, readingDevice.Temperature);  // Saljem inicijalnu poruku
 
 
-            Console.WriteLine("Test");
+            Thread t1 = new Thread(new ThreadStart(Grijac));       // Pozivam nit koja povecava temperaturu ako je grijac upaljen
+            t1.Start();
 
-            Console.ReadLine();
+
+            while (true)
+            {
+                m.WaitOne();
+                readingDevice.sendTemperature();                        // Na svaka 3 minuta saljem poruku
+                m.ReleaseMutex();
+
+                Thread.Sleep(1000 * 60 * 3);
+            }
+
+
         }
+        
+        static void Grijac()
+        {
+            while (true)
+            {
+                // Ovde treba cekati poruku od servera i kad je primi provjeriti da li je upaljen grijac
+
+                bool upaljen = true;
+
+                if (upaljen)
+                {
+                    m.WaitOne();
+                    readingDevice.raiseTemperature();
+                    m.ReleaseMutex();
+                }
+            }
+
+           
+        }
+    
     }
 }
 

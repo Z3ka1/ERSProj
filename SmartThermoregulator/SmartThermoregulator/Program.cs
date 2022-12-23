@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace SmartThermoregulator
 {
     class Program
     {
+        static TemperatureRegulator.TemperatureRegulator temperatureRegulator = new TemperatureRegulator.TemperatureRegulator();
         //TODO Sve iz main metode prebaciti u pripadajuce klase
         static void Main(string[] args)
         {
@@ -24,6 +26,8 @@ namespace SmartThermoregulator
             //}
 
             //Process.Start("ReadingDevice");
+
+            
 
             string com;
 
@@ -48,6 +52,8 @@ namespace SmartThermoregulator
                 }
             }
 
+            temperatureRegulator.dnevniPocetak = od;
+
             while (true)
             {
                 Console.WriteLine("Unesite do koliko sati traje dnevni rezim!");
@@ -61,6 +67,9 @@ namespace SmartThermoregulator
                     break;
                 }
             }
+
+            temperatureRegulator.dnevniKraj = doo;
+
             while (true)
             {
                 Console.WriteLine("Unesite temperaturu dnevnog rezima!");
@@ -74,6 +83,9 @@ namespace SmartThermoregulator
                     break;
                 }
             }
+
+            temperatureRegulator.SetDayTemperature(temperaturaDnevnog);
+
             while (true)
             {
                 Console.WriteLine("Unesite temperaturu nocnog rezima!");
@@ -87,8 +99,25 @@ namespace SmartThermoregulator
                     break;
                 }
             }
+
+            temperatureRegulator.SetNightTemperature(temperaturaNocnog);
+
                 Console.WriteLine("Izvrsavanje...");
 
+
+            Thread t1 = new Thread(new ThreadStart(Konekcije));       // Pozivam nit koja ce provjeravati i prihvatati konekcije
+            t1.Start();
+
+
+            while (true)
+            {
+                if (temperatureRegulator.readingDevices.Count >= 4)
+                {
+                                // Dalji rad sa Temperature Regulatorom kada se pozovu 4 ili vise ReadingDevice
+                }
+            }
+
+            
 
             using (StreamWriter w = File.AppendText("log.txt"))
             {
@@ -124,6 +153,23 @@ namespace SmartThermoregulator
 
 
             Console.ReadLine();
+        }
+
+
+        public static void Konekcije()
+        {
+            while (true)
+            {
+
+                //Ovde se prima inicijalna poruka od ReadingDevice
+
+                int id = 0;
+                string port = "PORT";
+
+                temperatureRegulator.readingDevices.Add(id, port);           // Dictionary u koji smjestam sve Reading device
+
+
+            }
         }
 
         public static void Log(string logMessage, TextWriter w)

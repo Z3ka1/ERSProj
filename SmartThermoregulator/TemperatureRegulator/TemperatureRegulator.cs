@@ -13,12 +13,21 @@ namespace TemperatureRegulator
         private const int DEFAULT_DAY_TEMPERATURE = 22;
         private const int DEFAULT_NIGHT_TEMPERATURE = 18;
 
+        public Dictionary<int, string> readingDevices = new Dictionary<int, string>();         // Dictionary u kome cemo cuvati portove i ID-jeve ReadingDevices
+
         private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
+
+        public int dnevniPocetak { get; set; }
+        public int dnevniKraj { get; set; }
 
         //Lista temperatura 
         private Dictionary<Int32, double> temperatures;
 
+        public TemperatureRegulator()
+        {
+            
+        }
 
         public TemperatureRegulator(int dayHours)
         {
