@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {}
+    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
+        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\SANJA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\obj\\",
+        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
+        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SANJA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,25 +54,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {
+    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
+        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
         "projectName": "TemperatureRegulator",
-        "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
-        "packagesPath": "C:\\Users\\SANJA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\obj\\",
+        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
+        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
+        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SANJA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,8 +82,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
               }
             }
           }
@@ -120,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

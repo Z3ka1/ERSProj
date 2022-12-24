@@ -98,6 +98,22 @@ namespace TemperatureRegulator
 
         }
 
+        public void regulate()
+        {
+            double avgTemp = 0;
+            int numOfReadings = 0;
+            foreach (var tmp in temperatures)
+            {
+                avgTemp += tmp.Value;
+                numOfReadings++;
+            }
+
+            avgTemp = avgTemp / numOfReadings;
+
+            //TODO Ako je avgTemp < day/night_temperature upaliti pec
+
+        }
+
 
 
     }
