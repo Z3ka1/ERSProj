@@ -41,17 +41,17 @@ namespace CentralHeater
             
             // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
 
-           public void TurnOff()
+        public void TurnOff()
+        {
+            this.isOn = false;
+            runTime = DateTime.Now - startTime;
+
+
+            using (StreamWriter w = File.AppendText("log.txt"))
             {
-                this.isOn = false;
-                runTime = DateTime.Now - startTime;
-
-
-                using (StreamWriter w = File.AppendText("log.txt"))
-                {
                     Log($"Grijac se ugasio", w);
-                }
             }
+        }
 
         // Metoda za proveru da li je peć upaljena
         public bool IsOn()
@@ -63,10 +63,12 @@ namespace CentralHeater
         // Metoda koja vraca ukupno vreme koliko je grejac bio ukljucen
         public TimeSpan GetRunTime()
         {
-
             return runTime;
-       
         }
+
+
+
+
 
         public static void Log(string logMessage, TextWriter w)
         {

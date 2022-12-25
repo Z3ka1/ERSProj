@@ -5,6 +5,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Net;
 using CentralHeater;
+using System.IO;
 
 namespace TemperatureRegulator
 {
@@ -19,9 +20,7 @@ namespace TemperatureRegulator
         private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
-       
 
-       
        
         public int dnevniPocetak { get; set; }
         public int dnevniKraj { get; set; }
@@ -35,7 +34,6 @@ namespace TemperatureRegulator
         public TemperatureRegulator()
         {
             this.centralHeater = new CentralHeater.CentralHeater();
-
         }
 
         public TemperatureRegulator(int dayHours)
@@ -80,6 +78,7 @@ namespace TemperatureRegulator
             }
         }
 
+        //Prima temperaturu od uredjaja (ReadingDevice)
         public void receiveTemperature()
         {
             IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
@@ -107,6 +106,7 @@ namespace TemperatureRegulator
 
         }
 
+        //TODO Dodati kad treba ugasiti pec
         public void regulate()
         {
             double avgTemp = 0;
@@ -119,34 +119,38 @@ namespace TemperatureRegulator
 
             avgTemp = avgTemp / numOfReadings;
 
-            //TODO Ako je avgTemp < day/night_temperature upaliti pec
-
             // Provera da li je potrebno upaliti ili ugasiti peć
             int currentHour = DateTime.Now.Hour;
+            Common.Enums.Command komanda = Enums.Command.Nothing;
             if(currentHour>=dnevniPocetak && currentHour<dnevniKraj)
             {
                 //trenutno je dan
                 if(avgTemp<dayTemperature)
-                {
-                    //upali pec
-                    //TODO KLIJENT
-                }
+                    komanda = Enums.Command.TurnOn;
             }
             else
             {
                 //trenutno je noc
                 if(avgTemp<nightTemperature)
-                {
-                    //upali pec
-                    //TODO KLIJENT
-
-                }
+                    komanda = Enums.Command.TurnOn;
             }
-          //  if (avgTemp < dayTemperature || avgTemp<nightTemperature)
-          //  {
-               //TODO
-          //  }
 
+            sendCommand(komanda);
+        }
+
+        //Salje centralnoj peci znak da se ukljuci/iskljuci
+        public void sendCommand(Common.Enums.Command komanda)
+        {
+            //Konektovanje na server (CentralHeater)
+            TcpClient client = new TcpClient("localhost", Common.Constants.PortRegulatorHeater);
+            NetworkStream stream = client.GetStream();
+
+            //Slanje poruke sa komandom heateru
+            string message = komanda.ToString();
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            stream.Write(data, 0, data.Length);
+
+            client.Close();
         }
 
 

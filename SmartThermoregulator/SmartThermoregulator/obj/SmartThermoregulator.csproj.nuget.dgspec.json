@@ -1,35 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\SmartThermoregulator.csproj": {}
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/SmartThermoregulator.csproj": {}
   },
   "projects": {
-    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj",
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj",
         "projectName": "CentralHeater",
-        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj",
-        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\obj\\",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
               }
             }
           }
@@ -49,37 +47,46 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj",
         "projectName": "Common",
-        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\obj\\",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -103,45 +110,54 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj": {
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj",
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj",
         "projectName": "ReadingDevice",
-        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj",
-        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\obj\\",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
               }
             }
           }
@@ -161,54 +177,67 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\SmartThermoregulator.csproj": {
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/SmartThermoregulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\SmartThermoregulator.csproj",
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/SmartThermoregulator.csproj",
         "projectName": "SmartThermoregulator",
-        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\SmartThermoregulator.csproj",
-        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\SmartThermoregulator\\obj\\",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/SmartThermoregulator.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/SmartThermoregulator/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj"
               },
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
               },
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj"
               },
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj"
               }
             }
           }
@@ -228,48 +257,61 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj",
         "projectName": "TemperatureRegulator",
-        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
-        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\obj\\",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj"
               },
-              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
               }
             }
           }
@@ -289,16 +331,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

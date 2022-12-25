@@ -27,7 +27,6 @@ namespace SmartThermoregulator
 
             //Process.Start("ReadingDevice");
 
-            
 
             string com;
 
