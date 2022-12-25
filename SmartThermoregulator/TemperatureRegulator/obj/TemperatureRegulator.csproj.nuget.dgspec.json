@@ -4,6 +4,64 @@
     "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj": {}
   },
   "projects": {
+    "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj",
+        "projectName": "CentralHeater",
+        "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj",
+        "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
+        "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -82,6 +140,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
+                "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj"
+              },
               "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
                 "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
               }

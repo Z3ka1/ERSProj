@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Collections.Generic;
 using System.Net;
+using CentralHeater;
 
 namespace TemperatureRegulator
 {
@@ -18,15 +19,23 @@ namespace TemperatureRegulator
         private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
+       
+
+       
+       
         public int dnevniPocetak { get; set; }
         public int dnevniKraj { get; set; }
 
         //Lista temperatura 
         private Dictionary<Int32, double> temperatures;
 
+
+
+        private CentralHeater.CentralHeater centralHeater;
         public TemperatureRegulator()
         {
-            
+            this.centralHeater = new CentralHeater.CentralHeater();
+
         }
 
         public TemperatureRegulator(int dayHours)
@@ -74,10 +83,10 @@ namespace TemperatureRegulator
         public void receiveTemperature()
         {
             IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
-            TcpListener listener = new TcpListener(localAddr,Common.Constants.PortDeviceRegulator);
+            TcpListener listener = new TcpListener(localAddr, Common.Constants.PortDeviceRegulator);
             listener.Start();
 
-            while(true)
+            while (true)
             {
                 TcpClient client = listener.AcceptTcpClient();
 
@@ -111,6 +120,32 @@ namespace TemperatureRegulator
             avgTemp = avgTemp / numOfReadings;
 
             //TODO Ako je avgTemp < day/night_temperature upaliti pec
+
+            // Provera da li je potrebno upaliti ili ugasiti peć
+            int currentHour = DateTime.Now.Hour;
+            if(currentHour>=dnevniPocetak && currentHour<dnevniKraj)
+            {
+                //trenutno je dan
+                if(avgTemp<dayTemperature)
+                {
+                    //upali pec
+                    //TODO KLIJENT
+                }
+            }
+            else
+            {
+                //trenutno je noc
+                if(avgTemp<nightTemperature)
+                {
+                    //upali pec
+                    //TODO KLIJENT
+
+                }
+            }
+          //  if (avgTemp < dayTemperature || avgTemp<nightTemperature)
+          //  {
+               //TODO
+          //  }
 
         }
 

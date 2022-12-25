@@ -1226,6 +1226,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "CentralHeater/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CentralHeater.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CentralHeater.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1240,6 +1253,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "CentralHeater": "1.0.0",
           "Common": "1.0.0"
         },
         "compile": {
@@ -4638,6 +4652,11 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "CentralHeater/1.0.0": {
+      "type": "project",
+      "path": "../CentralHeater/CentralHeater.csproj",
+      "msbuildProject": "../CentralHeater/CentralHeater.csproj"
     },
     "Common/1.0.0": {
       "type": "project",

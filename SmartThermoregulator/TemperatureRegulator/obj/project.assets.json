@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "CentralHeater/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CentralHeater.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CentralHeater.dll": {}
+        }
+      },
       "Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "CentralHeater/1.0.0": {
+      "type": "project",
+      "path": "../CentralHeater/CentralHeater.csproj",
+      "msbuildProject": "../CentralHeater/CentralHeater.csproj"
+    },
     "Common/1.0.0": {
       "type": "project",
       "path": "../Common/Common.csproj",
@@ -23,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CentralHeater >= 1.0.0",
       "Common >= 1.0.0"
     ]
   },
@@ -53,6 +72,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj": {
+              "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj"
+            },
             "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
               "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
             }
