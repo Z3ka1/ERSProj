@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{8BC2F379-DA43-4684-8A7B-115AF211DE9D}|Default" VersionControlDisabled="True">
   <MonoDevelop.Ide.Workbench ActiveDocument="TemperatureRegulator/TemperatureRegulator.cs">
     <Files>
-      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="152" Column="1" />
-      <File FileName="CentralHeater/CentralHeater.cs" Line="69" Column="1" />
+      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="110" Column="44" />
+      <File FileName="CentralHeater/CentralHeater.cs" Line="88" Column="32" />
       <File FileName="Common/Constants.cs" Line="29" Column="37" />
-      <File FileName="Common/Enums.cs" Line="10" Column="11" />
-      <File FileName="SmartThermoregulator/Program.cs" Line="30" Column="1" />
+      <File FileName="Common/Enums.cs" Line="7" Column="4" />
+      <File FileName="SmartThermoregulator/Program.cs" Line="14" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

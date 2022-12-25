@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using Common;
 
 namespace CentralHeater
 {
-    //TODO Naslediti ICentralHeater
     public class CentralHeater : ICentralHeater
     {
         // Privatno polje koje cuva vreme kada je grejac ukljucen
@@ -20,7 +22,7 @@ namespace CentralHeater
         {
             // Inicijalno, peć je ugašena
             this.isOn = false;
-            
+            runTime = TimeSpan.Zero;
         }
 
         // Metoda koja se poziva kada CentralHeater primi komandu od TemperatureRegulator-a
@@ -67,7 +69,38 @@ namespace CentralHeater
         }
 
 
+        public void receiveCommand()
+        {
+            IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
+            TcpListener listener = new TcpListener(localAddr, Common.Constants.PortRegulatorHeater);
+            listener.Start();
 
+            while (true)
+            {
+                TcpClient client = listener.AcceptTcpClient();
+
+                NetworkStream stream = client.GetStream();
+
+                byte[] data = new byte[256];
+                int bytes = stream.Read(data, 0, data.Length);
+                string request = Encoding.UTF8.GetString(data, 0, bytes);
+
+                switch(request)
+                {
+                    case "TurnOn":
+                        TurnOn();
+                        break;
+                    case "TurnOff":
+                        TurnOff();
+                        break;
+                    default:
+                        break;
+                }
+
+
+                client.Close();
+            }
+        }
 
 
         public static void Log(string logMessage, TextWriter w)

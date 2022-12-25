@@ -100,6 +100,7 @@ namespace TemperatureRegulator
 
                 temperatures[Int32.Parse(parts[0])] = double.Parse(parts[1]);
 
+                regulate();
 
                 client.Close();
             }
