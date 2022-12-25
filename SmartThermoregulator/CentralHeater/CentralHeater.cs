@@ -37,7 +37,7 @@ namespace CentralHeater
 
             using (StreamWriter w = File.AppendText("log.txt"))
             {
-                Log($"Grijac se upalio", w);
+                Log($"Grejac se ukljucio", w);
             }
         }
             
@@ -51,7 +51,7 @@ namespace CentralHeater
 
             using (StreamWriter w = File.AppendText("log.txt"))
             {
-                    Log($"Grijac se ugasio", w);
+                    Log($"Grejac se iskljucio", w);
             }
         }
 
