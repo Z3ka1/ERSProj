@@ -27,19 +27,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admina\\.nuget\\packages\\": {}
+    "C:\\Users\\SANJA\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj",
+      "projectUniqueName": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj",
       "projectName": "ReadingDevice",
-      "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj",
-      "packagesPath": "C:\\Users\\admina\\.nuget\\packages\\",
-      "outputPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\ReadingDevice\\obj\\",
+      "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\ReadingDevice\\ReadingDevice.csproj",
+      "packagesPath": "C:\\Users\\SANJA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\ReadingDevice\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\admina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SANJA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +58,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
-              "projectPath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
+            "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\Common\\Common.csproj"
             }
           }
         }
@@ -83,7 +88,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
       }
     }
   }
