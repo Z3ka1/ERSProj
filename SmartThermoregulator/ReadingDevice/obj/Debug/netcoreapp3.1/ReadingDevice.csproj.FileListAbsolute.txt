@@ -1,0 +1,17 @@
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/ReadingDevice
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/ReadingDevice.deps.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/ReadingDevice.runtimeconfig.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/ReadingDevice.runtimeconfig.dev.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/ReadingDevice.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/ReadingDevice.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/Common.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/bin/Debug/netcoreapp3.1/Common.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.csproj.AssemblyReference.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.AssemblyInfoInputs.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.AssemblyInfo.cs
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.csproj.CoreCompileInputs.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.csproj.CopyComplete
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/Debug/netcoreapp3.1/ReadingDevice.genruntimeconfig.cache
