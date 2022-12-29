@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R4iFVMuxP9ROy48FVsTVe1B0xeEkuSsEoJC/k8c9dvRScYQT/YgNHQFML4IiV8Fwjed1h3ikSA1tc9GCV8DcTA==",
+  "dgSpecHash": "ssOd1O24uhkhqeHCIVZSJmjDYvjpSl4WfeklvbkoRQe3Rzf3EEXrpc/Jl8hCiOwjhEkJofPMguN/SIe17dWXjw==",
   "success": true,
-  "projectFilePath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj",
-  "expectedPackageFiles": [
-    "/Users/zeka/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "/Users/zeka/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.31/microsoft.netcore.app.host.osx-x64.3.1.31.nupkg.sha512",
-    "/Users/zeka/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
-  ],
+  "projectFilePath": "F:\\trecagodina\\elementirazvojasoftvera\\ERSProj\\SmartThermoregulator\\TemperatureRegulator\\TemperatureRegulator.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -128,12 +128,16 @@ namespace TemperatureRegulator
                 //trenutno je dan
                 if(avgTemp<dayTemperature)
                     komanda = Enums.Command.TurnOn;
+                else if (avgTemp >= dayTemperature+3)
+                    komanda = Enums.Command.TurnOff;
             }
             else
             {
                 //trenutno je noc
                 if(avgTemp<nightTemperature)
                     komanda = Enums.Command.TurnOn;
+                else if (avgTemp >= nightTemperature+3)
+                    komanda = Enums.Command.TurnOff;
             }
 
             sendCommand(komanda);
