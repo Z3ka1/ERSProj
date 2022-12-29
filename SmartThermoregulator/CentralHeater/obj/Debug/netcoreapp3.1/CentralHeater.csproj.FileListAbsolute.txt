@@ -1,0 +1,13 @@
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/bin/Debug/netcoreapp3.1/CentralHeater.deps.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/bin/Debug/netcoreapp3.1/CentralHeater.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/bin/Debug/netcoreapp3.1/CentralHeater.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/bin/Debug/netcoreapp3.1/Common.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/bin/Debug/netcoreapp3.1/Common.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.csproj.AssemblyReference.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.AssemblyInfoInputs.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.AssemblyInfo.cs
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.csproj.CoreCompileInputs.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.csproj.CopyComplete
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/obj/Debug/netcoreapp3.1/CentralHeater.pdb
