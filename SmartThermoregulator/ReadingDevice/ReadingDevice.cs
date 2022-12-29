@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.IO;
 using System.Threading;
+using System.Net;
 
 namespace ReadingDevice
 {
@@ -44,6 +45,33 @@ namespace ReadingDevice
 
 
             client.Close();
+        }
+
+        public void receiveStateHeater()
+        {
+            IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
+            TcpListener listener = new TcpListener(localAddr, Common.Constants.PortRegulatorDevice + Id);
+            listener.Start();
+
+            while (true)
+            {
+                TcpClient client = listener.AcceptTcpClient();
+
+                NetworkStream stream = client.GetStream();
+
+                byte[] data = new byte[256];
+                int bytes = stream.Read(data, 0, data.Length);
+                string request = Encoding.UTF8.GetString(data, 0, bytes);
+
+                
+                if (request == "upaljena")
+                    Console.WriteLine("Grijac je poceo sa radom.");
+                else
+                    Console.WriteLine("Grijac je zaustavio rad");
+
+                client.Close();
+            }
+
         }
 
         //Povecava temperaturu ukoliko je grejac ukljucen
