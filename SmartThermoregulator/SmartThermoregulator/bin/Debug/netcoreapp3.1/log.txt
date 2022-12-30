@@ -1,0 +1,87 @@
+2:49:11 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:49:13 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+2:50:20 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:50:22 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+2:50:23 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:50:26 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:53:41 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:53:43 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+2:53:44 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:53:47 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:55:15 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:55:17 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+2:55:18 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:55:21 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 19
+-------------------------------
+2:57:11 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+2:58:40 PM Friday, December 30, 2022
+  :  Grejac se iskljucio
+-------------------------------
+3:00:18 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:00:57 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:03:16 PM Friday, December 30, 2022
+  :  Grejac se iskljucio
+-------------------------------
+3:04:59 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:07:08 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:08:54 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:01 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:08 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:15 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:22 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:29 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:36 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------
+3:09:43 PM Friday, December 30, 2022
+  :  Grejac se ukljucio
+-------------------------------

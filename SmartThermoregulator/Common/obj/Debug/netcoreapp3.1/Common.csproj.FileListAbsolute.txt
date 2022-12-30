@@ -8,3 +8,13 @@
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/obj/Debug/netcoreapp3.1/Common.csproj.CoreCompileInputs.cache
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/obj/Debug/netcoreapp3.1/Common.dll
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/obj/Debug/netcoreapp3.1/Common.pdb
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\bin\Debug\netcoreapp3.1\Common.deps.json
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\bin\Debug\netcoreapp3.1\Common.dll
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.csproj.AssemblyReference.cache
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.dll
+C:\Users\SANJA\Desktop\ERSProj\SmartThermoregulator\Common\obj\Debug\netcoreapp3.1\Common.pdb

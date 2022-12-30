@@ -40,8 +40,8 @@ namespace CentralHeater
                 Log($"Grejac se ukljucio", w);
             }
         }
-            
-            // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
+
+        // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
 
         public void TurnOff()
         {
@@ -51,7 +51,7 @@ namespace CentralHeater
 
             using (StreamWriter w = File.AppendText("log.txt"))
             {
-                    Log($"Grejac se iskljucio", w);
+                Log($"Grejac se iskljucio", w);
             }
         }
 
@@ -85,7 +85,7 @@ namespace CentralHeater
                 int bytes = stream.Read(data, 0, data.Length);
                 string request = Encoding.UTF8.GetString(data, 0, bytes);
 
-                switch(request)
+                switch (request)
                 {
                     case "TurnOn":
                         TurnOn();
@@ -111,5 +111,14 @@ namespace CentralHeater
         }
 
     }
-}
 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Test");
+            Console.ReadLine();
+        }
+    }
+}

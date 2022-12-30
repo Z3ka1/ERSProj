@@ -13,9 +13,32 @@ namespace ReadingDevice
         public int Id { get; set; }
         public double Temperature { get; set; }
 
-        //TODO Promeniti generisanje IDa ovako nece raditi
         public ReadingDevice()
         {
+            initialize();
+        }
+
+        public void initialize()
+        {
+            while (true)
+            {
+                Console.WriteLine("Unesite ID:");
+                if (Int32.TryParse(Console.ReadLine(), out int id))
+                {
+                    Id = id;
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                Console.WriteLine("Unesite inicijalnu temperaturu:");
+                if (double.TryParse(Console.ReadLine(), out double temp) && temp >= 0 && temp <= 35)
+                {
+                    Temperature = temp;
+                    break;
+                }
+            }
         }
 
         public void SendInitialMessage(int id, double temperature)
@@ -37,11 +60,12 @@ namespace ReadingDevice
             byte[] data = Encoding.UTF8.GetBytes(message);
             stream.Write(data, 0, data.Length);
 
+            Console.WriteLine("Temperatura poslata");
 
-            using (StreamWriter w = File.AppendText("log.txt"))
-            {
-                Log($"ReadingDevice ID={Id} je poslao temperaturu: {Temperature}", w);
-            }
+            //using (StreamWriter w = File.AppendText("log.txt"))
+            //{
+            //    Log($"ReadingDevice ID={Id} je poslao temperaturu: {Temperature}", w);
+            //}
 
 
             client.Close();
@@ -55,10 +79,10 @@ namespace ReadingDevice
 
             while (true)
             {
+
                 TcpClient client = listener.AcceptTcpClient();
 
                 NetworkStream stream = client.GetStream();
-
                 byte[] data = new byte[256];
                 int bytes = stream.Read(data, 0, data.Length);
                 string request = Encoding.UTF8.GetString(data, 0, bytes);
@@ -108,6 +132,24 @@ namespace ReadingDevice
 
     class Program
     {
+        static void Main(string[] args)
+        {
+            ReadingDevice rd = new ReadingDevice();
+
+            Console.WriteLine("Uredjaj za merenje: " + rd.Id);
+
+            Thread t1 = new Thread(rd.receiveStateHeater);
+            t1.Start();
+            
+            while(true)
+            {
+                rd.sendTemperature();
+                Thread.Sleep(Common.Constants.ReadingDeviceCheckTime * 1000);
+            }
+
+        }
+
+        /*
         static ReadingDevice readingDevice = new ReadingDevice();
         static Mutex m = new Mutex();
         static void Main(string[] args)
@@ -148,7 +190,7 @@ namespace ReadingDevice
 
                 Thread.Sleep(1000 * 60 * 3);
             }
-
+        
 
         }
         
@@ -170,7 +212,7 @@ namespace ReadingDevice
 
            
         }
-    
+    */
     }
 }
 

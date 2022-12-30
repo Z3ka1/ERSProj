@@ -1,0 +1,18 @@
+1:18:05 PM Friday, December 30, 2022
+  :  ReadingDevice ID=0 je poslao temperaturu: 0
+-------------------------------
+1:20:50 PM Friday, December 30, 2022
+  :  ReadingDevice ID=0 je poslao temperaturu: 0
+-------------------------------
+1:22:40 PM Friday, December 30, 2022
+  :  ReadingDevice ID=0 je poslao temperaturu: 0
+-------------------------------
+1:25:11 PM Friday, December 30, 2022
+  :  ReadingDevice ID=0 je poslao temperaturu: 0
+-------------------------------
+1:26:12 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 10
+-------------------------------
+1:33:43 PM Friday, December 30, 2022
+  :  ReadingDevice ID=1 je poslao temperaturu: 20
+-------------------------------
