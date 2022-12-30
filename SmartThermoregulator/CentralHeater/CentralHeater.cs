@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using Common;
 
 namespace CentralHeater
@@ -37,11 +38,11 @@ namespace CentralHeater
 
             using (StreamWriter w = File.AppendText("log.txt"))
             {
-                Log($"Grijac se upalio", w);
+                Log($"Grejac se ukljucio", w);
             }
         }
-            
-            // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
+
+        // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
 
         public void TurnOff()
         {
@@ -51,7 +52,7 @@ namespace CentralHeater
 
             using (StreamWriter w = File.AppendText("log.txt"))
             {
-                    Log($"Grijac se ugasio", w);
+                Log($"Grejac se iskljucio", w);
             }
         }
 
@@ -79,13 +80,15 @@ namespace CentralHeater
             {
                 TcpClient client = listener.AcceptTcpClient();
 
+                Console.WriteLine("KONEKTOVAN REGULATOR NA PEC");
+
                 NetworkStream stream = client.GetStream();
 
                 byte[] data = new byte[256];
                 int bytes = stream.Read(data, 0, data.Length);
                 string request = Encoding.UTF8.GetString(data, 0, bytes);
 
-                switch(request)
+                switch (request)
                 {
                     case "TurnOn":
                         TurnOn();
@@ -96,7 +99,7 @@ namespace CentralHeater
                     default:
                         break;
                 }
-
+                Console.WriteLine("PEC: " + isOn);
 
                 client.Close();
             }
@@ -110,6 +113,21 @@ namespace CentralHeater
             w.WriteLine("-------------------------------");
         }
 
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Console.WriteLine("CENTRALNA PEC");
+                CentralHeater ch = new CentralHeater();
+
+                Thread t1 = new Thread(ch.receiveCommand);
+                t1.Start();
+
+
+
+                Console.ReadLine();
+            }
+        }
+
     }
 }
-
