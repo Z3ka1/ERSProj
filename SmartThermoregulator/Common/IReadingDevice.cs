@@ -8,8 +8,8 @@ namespace Common
 
 
         public void sendTemperature();
-        public void raiseTemperature();
-
+        public void regulateTemperature();
+		public void receiveStateHeater();
 
     }
 }

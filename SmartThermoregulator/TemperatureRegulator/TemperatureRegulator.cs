@@ -12,12 +12,6 @@ namespace TemperatureRegulator
 {
     public class TemperatureRegulator : ITemperatureRegulator
     {
-        //TODO prebaciti u common Consts
-        private const int DEFAULT_DAY_TEMPERATURE = 22;
-        private const int DEFAULT_NIGHT_TEMPERATURE = 18;
-
-        public Dictionary<int, string> readingDevices = new Dictionary<int, string>();         // Dictionary u kome cemo cuvati portove i ID-jeve ReadingDevices
-
         private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
@@ -34,8 +28,6 @@ namespace TemperatureRegulator
         public TemperatureRegulator()
         {
             temperatures = new Dictionary<int, double>();
-            dayTemperature = DEFAULT_DAY_TEMPERATURE;
-            nightTemperature = DEFAULT_NIGHT_TEMPERATURE;
             unosPodataka();
         }
 
@@ -98,6 +90,7 @@ namespace TemperatureRegulator
 
                 client.Close();
                 Console.WriteLine("KONEKCIJA SA UREDJAJEM ZATVORENA");
+                Console.WriteLine();
             }
 
         }
@@ -152,6 +145,8 @@ namespace TemperatureRegulator
             }
             Console.WriteLine("REGULATE ZAVRSEN");
         }
+
+
         //Salje centralnoj peci znak da se ukljuci/iskljuci
         public void sendCommand(Common.Enums.Command komanda)
         {
@@ -257,7 +252,7 @@ namespace TemperatureRegulator
 
             SetNightTemperature(temperaturaNocnog);
 
-            Console.WriteLine("Izvrsavanje...");
+            Console.WriteLine("Regulator je poceo sa radom...");
         }
 
 
@@ -268,7 +263,7 @@ namespace TemperatureRegulator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Regulator");
+            Console.WriteLine("REGULATOR");
 
             TemperatureRegulator tr = new TemperatureRegulator();
             Thread t1 = new Thread(tr.receiveTemperature);

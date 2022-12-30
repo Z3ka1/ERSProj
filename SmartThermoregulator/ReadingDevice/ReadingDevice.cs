@@ -12,9 +12,11 @@ namespace ReadingDevice
     {
         public int Id { get; set; }
         public double Temperature { get; set; }
+        public bool HeaterIsOn { get; set; }
 
         public ReadingDevice()
         {
+            HeaterIsOn = false;
             initialize();
         }
 
@@ -41,14 +43,7 @@ namespace ReadingDevice
             }
         }
 
-        public void SendInitialMessage(int id, double temperature)
-        {
-                                                                // Ovde treba povezati sa serverom da upisemo ID i inicijalnu temperaturu i da registrujemo ReadingDevice na TemperatureRegulator
-        }
-
-
         //Salje temperaturu regulatoru
-        //Metoda ce se verovatno menjati (ukoliko moze bez Client/Server)
         public void sendTemperature()
         {
             //Konektovanje na server (Regulator)
@@ -61,12 +56,6 @@ namespace ReadingDevice
             stream.Write(data, 0, data.Length);
 
             Console.WriteLine("Temperatura poslata");
-
-            //using (StreamWriter w = File.AppendText("log.txt"))
-            //{
-            //    Log($"ReadingDevice ID={Id} je poslao temperaturu: {Temperature}", w);
-            //}
-
 
             client.Close();
         }
@@ -87,21 +76,35 @@ namespace ReadingDevice
                 int bytes = stream.Read(data, 0, data.Length);
                 string request = Encoding.UTF8.GetString(data, 0, bytes);
 
-                
-                if (request == "upaljena")
-                    Console.WriteLine("Grijac je poceo sa radom.");
-                else
-                    Console.WriteLine("Grijac je zaustavio rad");
 
+                if (request == "upaljena")
+                {
+                    Console.WriteLine("Grijac je poceo sa radom.");
+                    HeaterIsOn = true;
+                }
+                else
+                {
+                    Console.WriteLine("Grijac je zaustavio rad");
+                    HeaterIsOn = false;
+                }
                 client.Close();
             }
 
         }
 
-        //Povecava temperaturu ukoliko je grejac ukljucen
-        public void raiseTemperature()
+        //Povecava/smanjuje temperaturu ukoliko je grejac ukljucen/iskljucen
+        public void regulateTemperature()
         {
-            Temperature += Common.Constants.ReadingDeviceTempChange;
+            while(true)
+            {
+                if(HeaterIsOn)
+                    Temperature += Common.Constants.ReadingDeviceTempChange;
+                else
+                    Temperature -= Common.Constants.ReadingDeviceTempChange;
+
+                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000);
+            }
+
         }
 
         public override string ToString()
@@ -134,10 +137,13 @@ namespace ReadingDevice
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("UREDJAJ");
             ReadingDevice rd = new ReadingDevice();
 
-            Console.WriteLine("Uredjaj za merenje: " + rd.Id);
+            Console.WriteLine("Uredjaj za merenje ID: " + rd.Id);
 
+            Thread t2 = new Thread(rd.regulateTemperature);
+            t2.Start();
             Thread t1 = new Thread(rd.receiveStateHeater);
             t1.Start();
             

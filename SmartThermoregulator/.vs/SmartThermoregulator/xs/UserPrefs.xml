@@ -7,11 +7,12 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.TestTemperatureRegulator FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TemperatureRegulator/TemperatureRegulator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReadingDevice/ReadingDevice.cs">
     <Files>
-      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="23" Column="1" />
-      <File FileName="ReadingDevice/ReadingDevice.cs" Line="25" Column="1" />
-      <File FileName="SmartThermoregulator/Program.cs" Line="1" Column="1" />
+      <File FileName="ReadingDevice/ReadingDevice.cs" Line="137" Column="6" />
+      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="255" Column="19" />
+      <File FileName="CentralHeater/CentralHeater.cs" Line="6" Column="14" />
+      <File FileName="SmartThermoregulator/Program.cs" Line="32" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,13 +22,13 @@
             <Node name="Common" expanded="True" />
             <Node name="ReadingDevice" expanded="True">
               <Node name="Dependencies" expanded="True" />
+              <Node name="ReadingDevice.cs" selected="True" />
             </Node>
             <Node name="SmartThermoregulator" expanded="True">
               <Node name="Dependencies" expanded="True" />
             </Node>
             <Node name="TemperatureRegulator" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="TemperatureRegulator.cs" selected="True" />
             </Node>
           </Node>
         </State>

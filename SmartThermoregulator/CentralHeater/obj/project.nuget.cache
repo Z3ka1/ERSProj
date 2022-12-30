@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/mNB6GllpyuDehiIyIAaJjkZ0rCoROmqhZUxMNheTAWP/3Xg1xmIAFBVyfWaVOCZgMOK9evdaFMJ/s5Ov/R0BQ==",
+  "dgSpecHash": "yUZ4chpBv8cEc8X9UASc5XJYkgfry494eHQ7r04Hp6ouftHxLS6svBcPBWkSuNDINS3nTKQ8Nie2EJpH+UZelQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SANJA\\Desktop\\ERSProj\\SmartThermoregulator\\CentralHeater\\CentralHeater.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj",
+  "expectedPackageFiles": [
+    "/Users/zeka/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/zeka/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.31/microsoft.netcore.app.host.osx-x64.3.1.31.nupkg.sha512",
+    "/Users/zeka/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
