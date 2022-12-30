@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using Common;
 
 namespace CentralHeater
@@ -79,6 +80,8 @@ namespace CentralHeater
             {
                 TcpClient client = listener.AcceptTcpClient();
 
+                Console.WriteLine("KONEKTOVAN REGULATOR NA PEC");
+
                 NetworkStream stream = client.GetStream();
 
                 byte[] data = new byte[256];
@@ -96,7 +99,7 @@ namespace CentralHeater
                     default:
                         break;
                 }
-
+                Console.WriteLine("PEC: " + isOn);
 
                 client.Close();
             }
@@ -110,14 +113,21 @@ namespace CentralHeater
             w.WriteLine("-------------------------------");
         }
 
-    }
+       
 
+    }
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("CENTRALNA PEC");
+            CentralHeater ch = new CentralHeater();
 
-            Console.WriteLine("Test");
+            Thread t1 = new Thread(ch.receiveCommand);
+            t1.Start();
+
+
+
             Console.ReadLine();
         }
     }
