@@ -159,6 +159,21 @@ namespace TemperatureRegulator
         }
 
 
+        public void sendMessageToRegulator(Common.Enums.Command komanda, int port)
+        {
+            TcpClient client = new TcpClient("localhost", port);
+            NetworkStream stream = client.GetStream();
+
+            string message = "ugasena";
+            if (komanda == Enums.Command.TurnOn)
+                message = "upaljena";
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            stream.Write(data, 0, data.Length);
+
+            client.Close();
+        }
+
+
 
     }
 
