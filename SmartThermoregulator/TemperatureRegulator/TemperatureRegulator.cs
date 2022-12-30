@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Net;
 using CentralHeater;
 using System.IO;
+using System.Threading;
 
 namespace TemperatureRegulator
 {
@@ -21,7 +22,7 @@ namespace TemperatureRegulator
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
 
-       
+
         public int dnevniPocetak { get; set; }
         public int dnevniKraj { get; set; }
 
@@ -30,23 +31,12 @@ namespace TemperatureRegulator
 
 
 
-        private CentralHeater.CentralHeater centralHeater;
         public TemperatureRegulator()
-        {
-            this.centralHeater = new CentralHeater.CentralHeater();
-        }
-
-        public TemperatureRegulator(int dayHours)
         {
             temperatures = new Dictionary<int, double>();
             dayTemperature = DEFAULT_DAY_TEMPERATURE;
             nightTemperature = DEFAULT_NIGHT_TEMPERATURE;
-
-            //ako je unet broj sati koji nije izmedju 0 i 24 imamo izuzetak
-            if (dayHours < 0 || dayHours > 24)
-            {
-                throw new ArgumentOutOfRangeException("dayHours", "Day hours mora biti izmedju 0 i 24.");
-            }
+            unosPodataka();
         }
 
         //metode za postavljanje temperature za odgovarajuci rezim
@@ -89,6 +79,8 @@ namespace TemperatureRegulator
             {
                 TcpClient client = listener.AcceptTcpClient();
 
+                Console.WriteLine("PRIMLJEN");
+
                 NetworkStream stream = client.GetStream();
 
                 byte[] data = new byte[256];
@@ -100,14 +92,16 @@ namespace TemperatureRegulator
 
                 temperatures[Int32.Parse(parts[0])] = double.Parse(parts[1]);
 
+                Console.WriteLine("Primljeno " + temperatures[Int32.Parse(parts[0])]);
+
                 regulate();
 
                 client.Close();
+                Console.WriteLine("KONEKCIJA SA UREDJAJEM ZATVORENA");
             }
 
         }
 
-        //TODO Dodati kad treba ugasiti pec
         public void regulate()
         {
             double avgTemp = 0;
@@ -120,29 +114,44 @@ namespace TemperatureRegulator
 
             avgTemp = avgTemp / numOfReadings;
 
+            Console.WriteLine("IZRACUNAO AVG");
+
             // Provera da li je potrebno upaliti ili ugasiti peć
             int currentHour = DateTime.Now.Hour;
             Common.Enums.Command komanda = Enums.Command.Nothing;
-            if(currentHour>=dnevniPocetak && currentHour<dnevniKraj)
+
+            if (currentHour >= dnevniPocetak && currentHour < dnevniKraj)
             {
                 //trenutno je dan
-                if(avgTemp<dayTemperature)
+                if (avgTemp < dayTemperature)
                     komanda = Enums.Command.TurnOn;
-                else if (avgTemp >= dayTemperature+3)
+                else if (avgTemp >= dayTemperature + 3)
                     komanda = Enums.Command.TurnOff;
             }
             else
             {
                 //trenutno je noc
-                if(avgTemp<nightTemperature)
+                if (avgTemp < nightTemperature)
                     komanda = Enums.Command.TurnOn;
-                else if (avgTemp >= nightTemperature+3)
+                else if (avgTemp >= nightTemperature + 3)
                     komanda = Enums.Command.TurnOff;
             }
 
             sendCommand(komanda);
-        }
+            Console.WriteLine("POSLAO PECI");
 
+            if (komanda != Enums.Command.Nothing && temperatures.Count != 0)
+            {
+                Console.WriteLine("USAO U IF");
+                foreach (var tmp in temperatures)
+                {
+                    Console.WriteLine("USAO U FOREACH");
+                    sendMessageToRegulator(komanda, Common.Constants.PortRegulatorDevice + tmp.Key);
+                    Console.WriteLine("GOTOV FOREACH");
+                }
+            }
+            Console.WriteLine("REGULATE ZAVRSEN");
+        }
         //Salje centralnoj peci znak da se ukljuci/iskljuci
         public void sendCommand(Common.Enums.Command komanda)
         {
@@ -173,6 +182,84 @@ namespace TemperatureRegulator
             client.Close();
         }
 
+        public void unosPodataka()
+        {
+            string com;
+
+            int od;     //Temperatura od koje pocinje dnevni rezim
+            int doo;    //Temperatura do koje traje dnevni rezim
+            int temperaturaDnevnog;     // Temperatura dnevnog rezima
+            int temperaturaNocnog;      //Temperatura nocnog rezima
+
+
+
+            while (true)
+            {
+                Console.WriteLine("Unesite od koliko sati pocinje dnevni rezim!");
+                com = Console.ReadLine();
+                if (Int32.TryParse(com, out od) != true)
+                {
+                    continue;
+                }
+                if (od <= 23 && od >= 0)
+                {
+                    break;
+                }
+            }
+
+            dnevniPocetak = od;
+
+            while (true)
+            {
+                Console.WriteLine("Unesite do koliko sati traje dnevni rezim!");
+                com = Console.ReadLine();
+                if (Int32.TryParse(com, out doo) != true)
+                {
+                    continue;
+                }
+                if (doo <= 23 && doo >= 0)
+                {
+                    break;
+                }
+            }
+
+            dnevniKraj = doo;
+
+            while (true)
+            {
+                Console.WriteLine("Unesite temperaturu dnevnog rezima!");
+                com = Console.ReadLine();
+                if (Int32.TryParse(com, out temperaturaDnevnog) != true)
+                {
+                    continue;
+                }
+                if (temperaturaDnevnog >= 0 && temperaturaDnevnog <= 35)
+                {
+                    break;
+                }
+            }
+
+            SetDayTemperature(temperaturaDnevnog);
+
+            while (true)
+            {
+                Console.WriteLine("Unesite temperaturu nocnog rezima!");
+                com = Console.ReadLine();
+                if (Int32.TryParse(com, out temperaturaNocnog) != true)
+                {
+                    continue;
+                }
+                if (temperaturaNocnog >= 0 && temperaturaNocnog <= 35)
+                {
+                    break;
+                }
+            }
+
+            SetNightTemperature(temperaturaNocnog);
+
+            Console.WriteLine("Izvrsavanje...");
+        }
+
 
 
     }
@@ -181,12 +268,15 @@ namespace TemperatureRegulator
     {
         static void Main(string[] args)
         {
-            //TemperatureRegulator tr = new TemperatureRegulator(10);
+            Console.WriteLine("Regulator");
 
-            //tr.receiveTemperature();
+            TemperatureRegulator tr = new TemperatureRegulator();
+            Thread t1 = new Thread(tr.receiveTemperature);
+
+            t1.Start();
 
 
-            Console.WriteLine("Test");
+
             Console.ReadLine();
         }
     }
@@ -194,4 +284,3 @@ namespace TemperatureRegulator
 
 
 }
-
