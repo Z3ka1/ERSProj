@@ -113,21 +113,22 @@ namespace CentralHeater
             w.WriteLine("-------------------------------");
         }
 
-        class Program
+       
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                Console.WriteLine("CENTRALNA PEC");
-                CentralHeater ch = new CentralHeater();
+            Console.WriteLine("CENTRALNA PEC");
+            CentralHeater ch = new CentralHeater();
 
-                Thread t1 = new Thread(ch.receiveCommand);
-                t1.Start();
+            Thread t1 = new Thread(ch.receiveCommand);
+            t1.Start();
 
 
 
-                Console.ReadLine();
-            }
+            Console.ReadLine();
         }
-
     }
 }
