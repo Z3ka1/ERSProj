@@ -15,7 +15,7 @@ namespace TemperatureRegulator
         private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
-
+        Common.Enums.Command previousCommand;
 
         public int dnevniPocetak { get; set; }
         public int dnevniKraj { get; set; }
@@ -28,6 +28,7 @@ namespace TemperatureRegulator
         public TemperatureRegulator()
         {
             temperatures = new Dictionary<int, double>();
+            previousCommand = Enums.Command.Nothing;
             unosPodataka();
         }
 
@@ -107,42 +108,42 @@ namespace TemperatureRegulator
 
             avgTemp = avgTemp / numOfReadings;
 
-            Console.WriteLine("IZRACUNAO AVG");
+            Console.WriteLine("IZRACUNAO AVG = " + avgTemp);
 
             // Provera da li je potrebno upaliti ili ugasiti peć
             int currentHour = DateTime.Now.Hour;
-            Common.Enums.Command komanda = Enums.Command.Nothing;
-
+            Common.Enums.Command nextCommand = Enums.Command.Nothing;
             if (currentHour >= dnevniPocetak && currentHour < dnevniKraj)
             {
                 //trenutno je dan
                 if (avgTemp < dayTemperature)
-                    komanda = Enums.Command.TurnOn;
-                else if (avgTemp >= dayTemperature + 3)
-                    komanda = Enums.Command.TurnOff;
+                    nextCommand = Enums.Command.TurnOn;
+                //Ne gasi se cim dostigne zeljenu temp zato sto bi se u tom slucaju stalno palila/gasila
+                else if (avgTemp >= (dayTemperature + Common.Constants.TempRegulatorTempGap) && previousCommand != Enums.Command.TurnOff)
+                    nextCommand = Enums.Command.TurnOff;
             }
             else
             {
                 //trenutno je noc
                 if (avgTemp < nightTemperature)
-                    komanda = Enums.Command.TurnOn;
-                else if (avgTemp >= nightTemperature + 3)
-                    komanda = Enums.Command.TurnOff;
+                    nextCommand = Enums.Command.TurnOn;
+                else if (avgTemp >= (nightTemperature + Common.Constants.TempRegulatorTempGap) && previousCommand != Enums.Command.TurnOff)
+                    nextCommand = Enums.Command.TurnOff;
             }
-
-            sendCommand(komanda);
+            sendCommand(nextCommand);
             Console.WriteLine("POSLAO PECI");
 
-            if (komanda != Enums.Command.Nothing && temperatures.Count != 0)
+            if (previousCommand != nextCommand && temperatures.Count != 0)
             {
                 Console.WriteLine("USAO U IF");
                 foreach (var tmp in temperatures)
                 {
                     Console.WriteLine("USAO U FOREACH");
-                    sendMessageToRegulator(komanda, Common.Constants.PortRegulatorDevice + tmp.Key);
+                    sendMessageToRegulator(nextCommand, Common.Constants.PortRegulatorDevice + tmp.Key);
                     Console.WriteLine("GOTOV FOREACH");
                 }
             }
+            previousCommand = nextCommand;
             Console.WriteLine("REGULATE ZAVRSEN");
         }
 
@@ -168,9 +169,11 @@ namespace TemperatureRegulator
             TcpClient client = new TcpClient("localhost", port);
             NetworkStream stream = client.GetStream();
 
-            string message = "ugasena";
+            string message = "";
             if (komanda == Enums.Command.TurnOn)
                 message = "upaljena";
+            else if (komanda == Enums.Command.TurnOff)
+                message = "ugasena";
             byte[] data = Encoding.UTF8.GetBytes(message);
             stream.Write(data, 0, data.Length);
 

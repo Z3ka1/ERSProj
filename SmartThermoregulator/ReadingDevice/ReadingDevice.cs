@@ -28,6 +28,22 @@ namespace ReadingDevice
                 if (Int32.TryParse(Console.ReadLine(), out int id))
                 {
                     Id = id;
+
+                    //Provera da li je uneti ID jedinstven
+                    //Vrsi se tako sto pokusavamo da startujemo server na portu koji je potencijalno zauzet
+                    //Mozda nije optimalno ali radi :)
+                    try
+                    {
+                        IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
+                        TcpListener listener = new TcpListener(localAddr, Common.Constants.PortRegulatorDevice + Id);
+                        listener.Start();
+                        listener.Stop();
+                    }
+                    catch (SocketException ex)
+                    {
+                        Console.WriteLine("Uneti ID je vec u upotrebi");
+                        continue;
+                    }
                     break;
                 }
             }
@@ -62,9 +78,11 @@ namespace ReadingDevice
 
         public void receiveStateHeater()
         {
+           
             IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
             TcpListener listener = new TcpListener(localAddr, Common.Constants.PortRegulatorDevice + Id);
             listener.Start();
+            
 
             while (true)
             {
@@ -82,7 +100,7 @@ namespace ReadingDevice
                     Console.WriteLine("Grijac je poceo sa radom.");
                     HeaterIsOn = true;
                 }
-                else
+                else if(request == "ugasena")
                 {
                     Console.WriteLine("Grijac je zaustavio rad");
                     HeaterIsOn = false;
@@ -142,12 +160,12 @@ namespace ReadingDevice
 
             Console.WriteLine("Uredjaj za merenje ID: " + rd.Id);
 
-            Thread t2 = new Thread(rd.regulateTemperature);
-            t2.Start();
             Thread t1 = new Thread(rd.receiveStateHeater);
             t1.Start();
-            
-            while(true)
+            Thread t2 = new Thread(rd.regulateTemperature);
+            t2.Start();
+
+            while (true)
             {
                 rd.sendTemperature();
                 Thread.Sleep(Common.Constants.ReadingDeviceCheckTime * 1000);

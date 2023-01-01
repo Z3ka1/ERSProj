@@ -88,6 +88,8 @@ namespace CentralHeater
                 int bytes = stream.Read(data, 0, data.Length);
                 string request = Encoding.UTF8.GetString(data, 0, bytes);
 
+                Console.WriteLine("KOMANDA: " + request);
+
                 switch (request)
                 {
                     case "TurnOn":
