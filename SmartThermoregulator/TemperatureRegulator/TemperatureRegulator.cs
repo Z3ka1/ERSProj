@@ -16,6 +16,7 @@ namespace TemperatureRegulator
         private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
         Common.Enums.Command previousCommand;
+        Common.Enums.Command nextCommand;
 
         public int dnevniPocetak { get; set; }
         public int dnevniKraj { get; set; }
@@ -29,6 +30,7 @@ namespace TemperatureRegulator
         {
             temperatures = new Dictionary<int, double>();
             previousCommand = Enums.Command.Nothing;
+            nextCommand = Enums.Command.Nothing;
             unosPodataka();
         }
 
@@ -112,7 +114,6 @@ namespace TemperatureRegulator
 
             // Provera da li je potrebno upaliti ili ugasiti peć
             int currentHour = DateTime.Now.Hour;
-            Common.Enums.Command nextCommand = Enums.Command.Nothing;
             if (currentHour >= dnevniPocetak && currentHour < dnevniKraj)
             {
                 //trenutno je dan

@@ -7,23 +7,24 @@
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.TestCentralHeater FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ReadingDevice/ReadingDevice.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Common/Constants.cs">
     <Files>
-      <File FileName="ReadingDevice/ReadingDevice.cs" Line="168" Column="25" />
-      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="111" Column="61" />
-      <File FileName="CentralHeater/CentralHeater.cs" Line="96" Column="34" />
-      <File FileName="SmartThermoregulator/Program.cs" Line="24" Column="51" />
-      <File FileName="Common/Constants.cs" Line="17" Column="45" />
+      <File FileName="ReadingDevice/ReadingDevice.cs" Line="59" Column="47" />
+      <File FileName="CentralHeater/CentralHeater.cs" Line="120" Column="63" />
+      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="22" Column="44" />
+      <File FileName="SmartThermoregulator/Program.cs" Line="30" Column="14" />
+      <File FileName="Common/Constants.cs" Line="5" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SmartThermoregulator" expanded="True">
             <Node name="CentralHeater" expanded="True" />
-            <Node name="Common" expanded="True" />
+            <Node name="Common" expanded="True">
+              <Node name="Constants.cs" selected="True" />
+            </Node>
             <Node name="ReadingDevice" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="ReadingDevice.cs" selected="True" />
             </Node>
             <Node name="SmartThermoregulator" expanded="True">
               <Node name="Dependencies" expanded="True" />

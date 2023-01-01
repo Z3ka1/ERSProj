@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading;
 using System.Net;
+using System.IO.MemoryMappedFiles;
 
 namespace ReadingDevice
 {
@@ -16,8 +17,24 @@ namespace ReadingDevice
 
         public ReadingDevice()
         {
-            HeaterIsOn = false;
             initialize();
+            getHeaterState();
+        }
+
+        public void getHeaterState()
+        {
+            TcpClient client = new TcpClient("localhost", Common.Constants.PortHeaterDevice);
+            NetworkStream stream = client.GetStream();
+
+            byte[] data = new byte[256];
+            int bytesRead = stream.Read(data, 0, data.Length);
+            string state = Encoding.UTF8.GetString(data, 0, bytesRead);
+            if (state.Equals("true"))
+                HeaterIsOn = true;
+            else
+                HeaterIsOn = false;
+
+            client.Close();
         }
 
         public void initialize()

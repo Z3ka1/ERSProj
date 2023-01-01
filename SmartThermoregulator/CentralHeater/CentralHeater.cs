@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -107,6 +108,28 @@ namespace CentralHeater
             }
         }
 
+        //Ceka novi uredjaj i vraca mu informaciju o stanju grejaca
+        public void waitNewDevice()
+        {
+            IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
+            TcpListener listener = new TcpListener(localAddr, Common.Constants.PortHeaterDevice);
+            listener.Start();
+
+            while(true)
+            {
+                TcpClient client = listener.AcceptTcpClient();
+                NetworkStream stream = client.GetStream();
+
+                string response = isOn.ToString();
+
+                byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+                stream.Write(responseBytes, 0, responseBytes.Length);
+
+                client.Close();
+            }
+
+        }
+
 
         public static void Log(string logMessage, TextWriter w)
         {
@@ -125,9 +148,11 @@ namespace CentralHeater
             Console.WriteLine("CENTRALNA PEC");
             CentralHeater ch = new CentralHeater();
 
+
+            Thread t2 = new Thread(ch.waitNewDevice);
+            t2.Start();
             Thread t1 = new Thread(ch.receiveCommand);
             t1.Start();
-
 
 
             Console.ReadLine();

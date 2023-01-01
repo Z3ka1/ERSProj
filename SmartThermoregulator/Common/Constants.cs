@@ -2,6 +2,7 @@
 
 namespace Common
 {
+	//TODO Izmeniti vrednosti na one zadata u zadatku
 	public static class Constants
 	{
 		//Broj sekundi na koje Reading Device proverava temperaturu
@@ -32,6 +33,11 @@ namespace Common
 		//Port za komunikaciju izmedju regulatora i grejaca (Gde regulator komanduje sa grejacem)
 		//(Port servera na CentralHeater-u)
 		public const int PortRegulatorHeater = 22000;
+
+		//Port za slanje stanja grejaca (Gde grejac salje port uredjaju)
+		//(Port servera na CentralHeater-u)
+		public const int PortHeaterDevice = 23000;
+
 	}
 }
 
