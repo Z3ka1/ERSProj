@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Net;
 using System.IO.MemoryMappedFiles;
+using System.Runtime.InteropServices;
 
 namespace ReadingDevice
 {
@@ -56,7 +57,7 @@ namespace ReadingDevice
                         listener.Start();
                         listener.Stop();
                     }
-                    catch (SocketException ex)
+                    catch
                     {
                         Console.WriteLine("Uneti ID je vec u upotrebi");
                         continue;
@@ -172,9 +173,17 @@ namespace ReadingDevice
     {
         static void Main(string[] args)
         {
+            //TODO Probati ovo na win
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Console.SetWindowPosition(0, 0);
+            }
+
+            Console.Clear();
             Console.WriteLine("UREDJAJ");
             ReadingDevice rd = new ReadingDevice();
 
+            Console.Clear();
             Console.WriteLine("Uredjaj za merenje ID: " + rd.Id);
 
             Thread t1 = new Thread(rd.receiveStateHeater);

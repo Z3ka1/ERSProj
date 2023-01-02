@@ -103,6 +103,7 @@ namespace CentralHeater
                         break;
                 }
                 Console.WriteLine("PEC: " + isOn);
+                //ispisUI();
 
                 client.Close();
             }
@@ -130,6 +131,26 @@ namespace CentralHeater
 
         }
 
+        //TODO Isprobati na win
+        public void ispisUI()
+        {
+            Console.Clear();
+            Console.WriteLine("CENTRALNA PEC");
+            if (isOn)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                //Console.BackgroundColor = ConsoleColor.Green;
+                Console.WriteLine("UKLJUJCENA");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                //Console.BackgroundColor = ConsoleColor.Red;
+                Console.WriteLine("ISKLJUCENA");
+                Console.ResetColor();
+            }
+        }
 
         public static void Log(string logMessage, TextWriter w)
         {
