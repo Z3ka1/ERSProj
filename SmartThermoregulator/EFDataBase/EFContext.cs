@@ -18,7 +18,6 @@ namespace EFDataBase
         {
             using (EFContext context = new EFContext())
             {
-                // Add a new entity
                 context.Infos.Add(new InfoCentralHeater
                 {
                     RunTime = runTime,
@@ -27,7 +26,6 @@ namespace EFDataBase
                     ResourcesSpent = resourcesSpent
                 });
 
-                // Save the changes
                 context.SaveChanges();
             }
         }

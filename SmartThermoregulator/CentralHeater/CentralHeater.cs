@@ -20,6 +20,8 @@ namespace CentralHeater
         // Promenljiva koja čuva stanje uključenosti peći
         public bool isOn;
 
+        public double TotalResourcesSpent { get; set; }
+
 
         // Konstruktor za klasu CentralHeater
         public CentralHeater()
@@ -27,14 +29,13 @@ namespace CentralHeater
             // Inicijalno, peć je ugašena
             this.isOn = false;
             runTime = TimeSpan.Zero;
+            TotalResourcesSpent = 0;
 
             //Pravljenje data baze ako ne postoji
             using (EFContext context = new EFContext())
             {
                 context.Database.EnsureCreated();
             }
-
-
         }
 
         // Metoda koja se poziva kada CentralHeater primi komandu od TemperatureRegulator-a
@@ -46,11 +47,6 @@ namespace CentralHeater
             this.isOn = true;
             startTime = DateTime.Now;
             runTime = TimeSpan.Zero;
-
-            using (StreamWriter w = File.AppendText("log.txt"))
-            {
-                Log($"Grejac se ukljucio", w);
-            }
         }
 
         // Ako grejac treba da se iskljuci, zaustavi tajmer i izracunaj vreme trajanja
@@ -59,10 +55,11 @@ namespace CentralHeater
         {
             this.isOn = false;
             runTime = DateTime.Now - startTime;
-            double resourcesSpent = 100;
+            TotalResourcesSpent += runTime.TotalHours * Common.Constants.CentralHeaterResourcesPerHour;
+            double resourcesSpentCycle = runTime.TotalHours * Common.Constants.CentralHeaterResourcesPerHour;
 
             //Dodavanje potrebnih podataka u bazu
-            EFContext.addInfo(runTime, startTime, resourcesSpent);
+            EFContext.addInfo(runTime, startTime, resourcesSpentCycle);
         }
 
         // Metoda za proveru da li je peć upaljena
@@ -165,16 +162,9 @@ namespace CentralHeater
             }
         }
 
-        public static void Log(string logMessage, TextWriter w)
-        {
-            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
-            w.WriteLine($"  :  {logMessage}");
-            w.WriteLine("-------------------------------");
-        }
-
-       
-
     }
+
+
     class Program
     {
         static void Main(string[] args)

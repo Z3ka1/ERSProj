@@ -22,6 +22,7 @@ namespace ReadingDevice
             getHeaterState();
         }
 
+        //Koristi se pri pozivanju konstruktora i dobija se od Heatera
         public void getHeaterState()
         {
             TcpClient client = new TcpClient("localhost", Common.Constants.PortHeaterDevice);
@@ -30,11 +31,15 @@ namespace ReadingDevice
             byte[] data = new byte[256];
             int bytesRead = stream.Read(data, 0, data.Length);
             string state = Encoding.UTF8.GetString(data, 0, bytesRead);
-            if (state.Equals("true"))
-                HeaterIsOn = true;
-            else
-                HeaterIsOn = false;
 
+            if (state.Equals("True"))
+            {
+                HeaterIsOn = true;
+            }
+            else
+            {
+                HeaterIsOn = false;
+            }
             client.Close();
         }
 
@@ -89,11 +94,12 @@ namespace ReadingDevice
             byte[] data = Encoding.UTF8.GetBytes(message);
             stream.Write(data, 0, data.Length);
 
-            Console.WriteLine("Temperatura poslata");
+            Console.WriteLine("Temperatura poslata " + Temperature);
 
             client.Close();
         }
 
+        //Koristi se pri promeni stanja grejaca i dobija se od Regulatora
         public void receiveStateHeater()
         {
            

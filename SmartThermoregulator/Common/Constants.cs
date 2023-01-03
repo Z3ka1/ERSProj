@@ -18,6 +18,10 @@ namespace Common
 		//Kako se pec ne bi stalno palila i gasila
 		public const double TempRegulatorTempGap = 1; //Celsius
 
+		//Konstanta koja oznacava koliko pec trosi wati na sat vremena
+		public const double CentralHeaterResourcesPerHour = 1500; //Watts
+
+
 		//Lokalna IP adresa
 		public const string localIpAddress = "127.0.0.1";
 

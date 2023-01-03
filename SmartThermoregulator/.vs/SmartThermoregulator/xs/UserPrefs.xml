@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{8BC2F379-DA43-4684-8A7B-115AF211DE9D}|Default" VersionControlDisabled="True">
   <MonoDevelop.Ide.ItemProperties.SmartThermoregulator PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CentralHeater/CentralHeater.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Common/Constants.cs">
     <Files>
-      <File FileName="CentralHeater/CentralHeater.cs" Line="22" Column="1" />
-      <File FileName="EFDataBase/Model.cs" Line="1" Column="1" />
-      <File FileName="EFDataBase/EFContext.cs" Line="11" Column="78" />
+      <File FileName="CentralHeater/CentralHeater.cs" Line="134" Column="51" />
+      <File FileName="TemperatureRegulator/TemperatureRegulator.cs" Line="173" Column="33" />
+      <File FileName="ReadingDevice/ReadingDevice.cs" Line="25" Column="71" />
+      <File FileName="Common/Constants.cs" Line="21" Column="65" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,12 +16,9 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="CentralHeater.cs" selected="True" />
             </Node>
-            <Node name="EFDataBase" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+            <Node name="Common" expanded="True">
+              <Node name="Constants.cs" selected="True" />
             </Node>
             <Node name="ReadingDevice" expanded="True">
               <Node name="Dependencies" expanded="True" />
