@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using Common;
+using EFDataBase;
 
 namespace CentralHeater
 {
@@ -19,12 +20,21 @@ namespace CentralHeater
         // Promenljiva koja čuva stanje uključenosti peći
         public bool isOn;
 
+
         // Konstruktor za klasu CentralHeater
         public CentralHeater()
         {
             // Inicijalno, peć je ugašena
             this.isOn = false;
             runTime = TimeSpan.Zero;
+
+            //Pravljenje data baze ako ne postoji
+            using (EFContext context = new EFContext())
+            {
+                context.Database.EnsureCreated();
+            }
+
+
         }
 
         // Metoda koja se poziva kada CentralHeater primi komandu od TemperatureRegulator-a
@@ -49,12 +59,10 @@ namespace CentralHeater
         {
             this.isOn = false;
             runTime = DateTime.Now - startTime;
+            double resourcesSpent = 100;
 
-
-            using (StreamWriter w = File.AppendText("log.txt"))
-            {
-                Log($"Grejac se iskljucio", w);
-            }
+            //Dodavanje potrebnih podataka u bazu
+            EFContext.addInfo(runTime, startTime, resourcesSpent);
         }
 
         // Metoda za proveru da li je peć upaljena
@@ -94,11 +102,16 @@ namespace CentralHeater
                 switch (request)
                 {
                     case "TurnOn":
-                        TurnOn();
+                        //Obezbedjuje da se pali pec samo kad je ona ugasena
+                        if(!isOn)
+                            TurnOn();
                         break;
+
                     case "TurnOff":
-                        TurnOff();
+                        if(isOn)
+                            TurnOff();
                         break;
+
                     default:
                         break;
                 }
@@ -168,7 +181,6 @@ namespace CentralHeater
         {
             Console.WriteLine("CENTRALNA PEC");
             CentralHeater ch = new CentralHeater();
-
 
             Thread t2 = new Thread(ch.waitNewDevice);
             t2.Start();
