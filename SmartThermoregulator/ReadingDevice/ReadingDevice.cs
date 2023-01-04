@@ -16,8 +16,12 @@ namespace ReadingDevice
         public double Temperature { get; set; }
         public bool HeaterIsOn { get; set; }
 
+        //Koristi se samo za UI
+        private string lastState;
+
         public ReadingDevice()
         {
+            lastState = "";
             initialize();
             getHeaterState();
         }
@@ -48,7 +52,7 @@ namespace ReadingDevice
             while (true)
             {
                 Console.WriteLine("Unesite ID:");
-                if (Int32.TryParse(Console.ReadLine(), out int id))
+                if (Int32.TryParse(Console.ReadLine(), out int id) && id >= 1 && id <= 999)
                 {
                     Id = id;
 
@@ -94,7 +98,7 @@ namespace ReadingDevice
             byte[] data = Encoding.UTF8.GetBytes(message);
             stream.Write(data, 0, data.Length);
 
-            Console.WriteLine("Temperatura poslata " + Temperature);
+            //Console.WriteLine("Temperatura poslata " + Temperature);
 
             client.Close();
         }
@@ -121,12 +125,16 @@ namespace ReadingDevice
 
                 if (request == "upaljena")
                 {
-                    Console.WriteLine("Grijac je poceo sa radom.");
+                    lastState = String.Format("{0,-25} {1,-10}", "Grijac je poceo sa radom. ", DateTime.Now.ToString("H:mm:ss"));
+                    //Console.WriteLine("{0,-25} {1,-10}", "Grijac je poceo sa radom. ", DateTime.Now.ToString("H:mm:ss"));
+                    updateUI();
                     HeaterIsOn = true;
                 }
                 else if(request == "ugasena")
                 {
-                    Console.WriteLine("Grijac je zaustavio rad");
+                    lastState = String.Format("{0,-25}  {1,-10}", "Grijac je zaustavio rad. ", DateTime.Now.ToString("H:mm:ss"));
+                    //Console.WriteLine("{0,-25}  {1,-10}", "Grijac je zaustavio rad. ", DateTime.Now.ToString("H:mm:ss"));
+                    updateUI();
                     HeaterIsOn = false;
                 }
                 client.Close();
@@ -139,15 +147,29 @@ namespace ReadingDevice
         {
             while(true)
             {
+                //Da se temperatura ne bi menjala odmah nakon pozivanja funkcije /2
+                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000 / 2);
                 if(HeaterIsOn)
                     Temperature += Common.Constants.ReadingDeviceTempChange;
                 else
                     Temperature -= Common.Constants.ReadingDeviceTempChange;
 
-                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000);
+                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000 / 2);
+                updateUI();
             }
 
         }
+
+        public void updateUI()
+        {
+            Console.Clear();
+            Console.WriteLine("Uredjaj za merenje ID: " + Id);
+            Console.WriteLine("Temperatura: {0:0.00}", Temperature);
+            Console.WriteLine("{0,-25}  {1,-10}", "OBAVESTENJE", "VREME");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine(lastState);
+        }
+
 
         public override string ToString()
         {
@@ -173,6 +195,7 @@ namespace ReadingDevice
             }
         }
 
+        
     }
 
     class Program
@@ -189,8 +212,7 @@ namespace ReadingDevice
             Console.WriteLine("UREDJAJ");
             ReadingDevice rd = new ReadingDevice();
 
-            Console.Clear();
-            Console.WriteLine("Uredjaj za merenje ID: " + rd.Id);
+            rd.updateUI();
 
             Thread t1 = new Thread(rd.receiveStateHeater);
             t1.Start();
@@ -199,7 +221,15 @@ namespace ReadingDevice
 
             while (true)
             {
-                rd.sendTemperature();
+                try
+                {
+                    rd.sendTemperature();
+                }
+                catch
+                {
+                    Console.WriteLine("Greska: REGULATOR NIJE POKRENUT");
+                    return;
+                }
                 Thread.Sleep(Common.Constants.ReadingDeviceCheckTime * 1000);
             }
 

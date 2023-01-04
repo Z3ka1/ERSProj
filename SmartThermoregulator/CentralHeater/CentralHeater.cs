@@ -80,7 +80,15 @@ namespace CentralHeater
         {
             IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
             TcpListener listener = new TcpListener(localAddr, Common.Constants.PortRegulatorHeater);
-            listener.Start();
+            try
+            {
+                listener.Start();
+            }
+            catch
+            {
+                Console.WriteLine("Greska: GREJAC VEC POSTOJI");
+                System.Environment.Exit(500);
+            }
 
             while (true)
             {
@@ -113,7 +121,7 @@ namespace CentralHeater
                         break;
                 }
                 Console.WriteLine("PEC: " + isOn);
-                //ispisUI();
+                ispisUI();
 
                 client.Close();
             }
@@ -124,7 +132,15 @@ namespace CentralHeater
         {
             IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
             TcpListener listener = new TcpListener(localAddr, Common.Constants.PortHeaterDevice);
-            listener.Start();
+            try
+            {
+                listener.Start();
+            }
+            catch
+            {
+                Console.WriteLine("Greska: GREJAC VEC POSTOJI");
+                System.Environment.Exit(500);
+            }
 
             while(true)
             {
@@ -169,14 +185,15 @@ namespace CentralHeater
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("CENTRALNA PEC");
+            //Console.Clear();
+            //Console.WriteLine("CENTRALNA PEC");
             CentralHeater ch = new CentralHeater();
+            ch.ispisUI();
 
             Thread t2 = new Thread(ch.waitNewDevice);
-            t2.Start();
             Thread t1 = new Thread(ch.receiveCommand);
+            t2.Start();
             t1.Start();
-
 
             Console.ReadLine();
         }

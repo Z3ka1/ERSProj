@@ -29,8 +29,8 @@ namespace TemperatureRegulator
         public TemperatureRegulator()
         {
             temperatures = new Dictionary<int, double>();
-            previousCommand = Enums.Command.Nothing;
-            nextCommand = Enums.Command.Nothing;
+            previousCommand = Enums.Command.TurnOff;
+            nextCommand = Enums.Command.TurnOff;
             unosPodataka();
         }
 
@@ -256,6 +256,12 @@ namespace TemperatureRegulator
 
             SetNightTemperature(temperaturaNocnog);
 
+
+            Console.Clear();
+            Console.WriteLine("Regulator");
+            Console.WriteLine("DNEVNI REZIM: " + od + ":00 - " + doo + ":00 Temp: " + temperaturaDnevnog);
+            Console.WriteLine("NOCNI REZIM:  " + doo + ":00 - " + od + ":00 Temp: " + temperaturaNocnog);
+            
             Console.WriteLine("Regulator je poceo sa radom...");
         }
 
@@ -267,6 +273,7 @@ namespace TemperatureRegulator
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             Console.WriteLine("REGULATOR");
 
             TemperatureRegulator tr = new TemperatureRegulator();

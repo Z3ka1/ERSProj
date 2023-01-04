@@ -19,6 +19,8 @@ namespace SmartThermoregulator
             startInfo2.FileName = "..\\..\\..\\..\\CentralHeater\\bin\\Debug\\netcoreapp3.1\\CentralHeater.exe";
             startInfo2.UseShellExecute = true;
 
+            Console.Clear();
+
             //TODO Nakon zavrsnog testiranja Izmeniti da mora minimum 4 uredjaja i < 999
             Console.WriteLine("Uneti broj uredjaja za citanje temperature: ");
             int x = int.Parse(Console.ReadLine());
