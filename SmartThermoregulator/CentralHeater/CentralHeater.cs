@@ -55,8 +55,9 @@ namespace CentralHeater
         {
             this.isOn = false;
             runTime = DateTime.Now - startTime;
-            TotalResourcesSpent += runTime.TotalHours * Common.Constants.CentralHeaterResourcesPerHour;
-            double resourcesSpentCycle = runTime.TotalHours * Common.Constants.CentralHeaterResourcesPerHour;
+            double resourcesSpentCycle = runTime.TotalHours * Common.Constants.CentralHeaterResourcesPerHour + Common.Constants.CentralHeaterResourcesOnTurnOn;
+            TotalResourcesSpent += resourcesSpentCycle;
+            
 
             //Dodavanje potrebnih podataka u bazu
             EFContext.addInfo(runTime, startTime, resourcesSpentCycle);

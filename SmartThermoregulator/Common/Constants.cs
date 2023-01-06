@@ -21,6 +21,9 @@ namespace Common
 		//Konstanta koja oznacava koliko pec trosi wati na sat vremena
 		public const double CentralHeaterResourcesPerHour = 1500; //Watts
 
+		//Konstanta koja oznacava koliko pec trosi wati pri paljenju
+		public const double CentralHeaterResourcesOnTurnOn = 15000; //Watts
+
 
 		//Lokalna IP adresa
 		public const string localIpAddress = "127.0.0.1";
