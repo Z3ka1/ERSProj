@@ -24,13 +24,15 @@ namespace TemperatureRegulator
         //Lista temperatura 
         private Dictionary<Int32, double> temperatures;
 
-
+        //Govori da li je regulator u funkciji
+        private bool working;
 
         public TemperatureRegulator()
         {
             temperatures = new Dictionary<int, double>();
             previousCommand = Enums.Command.TurnOff;
             nextCommand = Enums.Command.TurnOff;
+            working = false;
             unosPodataka();
         }
 
@@ -68,13 +70,21 @@ namespace TemperatureRegulator
         {
             IPAddress localAddr = IPAddress.Parse(Constants.localIpAddress);
             TcpListener listener = new TcpListener(localAddr, Common.Constants.PortDeviceRegulator);
-            listener.Start();
+            try
+            {
+                listener.Start();
+            }
+            catch
+            {
+                Console.WriteLine("Greska: REGULATOR VEC POSTOJI");
+                System.Environment.Exit(502);
+            }
 
             while (true)
             {
                 TcpClient client = listener.AcceptTcpClient();
 
-                Console.WriteLine("PRIMLJEN");
+                //Console.WriteLine("PRIMLJEN");
 
                 NetworkStream stream = client.GetStream();
 
@@ -87,13 +97,13 @@ namespace TemperatureRegulator
 
                 temperatures[Int32.Parse(parts[0])] = double.Parse(parts[1]);
 
-                Console.WriteLine("Primljeno " + temperatures[Int32.Parse(parts[0])]);
+                //Console.WriteLine("Primljeno " + temperatures[Int32.Parse(parts[0])]);
 
                 regulate();
 
                 client.Close();
-                Console.WriteLine("KONEKCIJA SA UREDJAJEM ZATVORENA");
-                Console.WriteLine();
+                //Console.WriteLine("KONEKCIJA SA UREDJAJEM ZATVORENA");
+                //Console.WriteLine();
             }
 
         }
@@ -108,9 +118,19 @@ namespace TemperatureRegulator
                 numOfReadings++;
             }
 
+            //Obezbedjuje da regulator ne izvrsava svoj zadatak dok nema 4 uredjaja
+            if (numOfReadings < 4)
+                return;
+            if (!working)
+            {
+                Console.WriteLine("Regulator je poceo sa radom...");
+                working = true;
+            }
+
+
             avgTemp = avgTemp / numOfReadings;
 
-            Console.WriteLine("IZRACUNAO AVG = " + avgTemp);
+            //Console.WriteLine("IZRACUNAO AVG = " + avgTemp);
 
             // Provera da li je potrebno upaliti ili ugasiti peć
             int currentHour = DateTime.Now.Hour;
@@ -131,21 +151,32 @@ namespace TemperatureRegulator
                 else if (avgTemp >= (nightTemperature + Common.Constants.TempRegulatorTempGap) && previousCommand != Enums.Command.TurnOff)
                     nextCommand = Enums.Command.TurnOff;
             }
-            sendCommand(nextCommand);
-            Console.WriteLine("POSLAO PECI");
+
+            try
+            {
+                sendCommand(nextCommand);
+            }
+            catch
+            {
+                Console.WriteLine("GRESKA: Grejac nije pokrenut!");
+                Console.WriteLine("Nakon paljenja grejaca ponovo pokrenuti regulator!");
+                System.Environment.Exit(503);
+            }
+
+            //Console.WriteLine("POSLAO PECI");
 
             if (previousCommand != nextCommand && temperatures.Count != 0)
             {
-                Console.WriteLine("USAO U IF");
+                //Console.WriteLine("USAO U IF");
                 foreach (var tmp in temperatures)
                 {
-                    Console.WriteLine("USAO U FOREACH");
+                    //Console.WriteLine("USAO U FOREACH");
                     sendMessageToRegulator(nextCommand, Common.Constants.PortRegulatorDevice + tmp.Key);
-                    Console.WriteLine("GOTOV FOREACH");
+                    //Console.WriteLine("GOTOV FOREACH");
                 }
             }
             previousCommand = nextCommand;
-            Console.WriteLine("REGULATE ZAVRSEN");
+            //Console.WriteLine("REGULATE ZAVRSEN");
         }
 
 
@@ -262,7 +293,7 @@ namespace TemperatureRegulator
             Console.WriteLine("DNEVNI REZIM: " + od + ":00 - " + doo + ":00 Temp: " + temperaturaDnevnog);
             Console.WriteLine("NOCNI REZIM:  " + doo + ":00 - " + od + ":00 Temp: " + temperaturaNocnog);
             
-            Console.WriteLine("Regulator je poceo sa radom...");
+            
         }
 
 

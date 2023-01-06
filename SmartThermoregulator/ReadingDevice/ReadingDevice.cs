@@ -23,7 +23,14 @@ namespace ReadingDevice
         {
             lastState = "";
             initialize();
-            getHeaterState();
+            try
+            {
+                getHeaterState();
+            }
+            catch
+            {
+                HeaterIsOn = false;
+            }
         }
 
         //Koristi se pri pozivanju konstruktora i dobija se od Heatera
@@ -224,13 +231,15 @@ namespace ReadingDevice
                 try
                 {
                     rd.sendTemperature();
+                    Thread.Sleep(Common.Constants.ReadingDeviceCheckTime * 1000);
                 }
                 catch
                 {
+                    Console.Clear();
+                    rd.updateUI();
                     Console.WriteLine("Greska: REGULATOR NIJE POKRENUT");
-                    return;
+                    System.Environment.Exit(501);
                 }
-                Thread.Sleep(Common.Constants.ReadingDeviceCheckTime * 1000);
             }
 
         }

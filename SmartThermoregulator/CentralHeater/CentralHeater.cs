@@ -157,7 +157,6 @@ namespace CentralHeater
 
         }
 
-        //TODO Isprobati na win
         public void ispisUI()
         {
             Console.Clear();
@@ -185,8 +184,6 @@ namespace CentralHeater
     {
         static void Main(string[] args)
         {
-            //Console.Clear();
-            //Console.WriteLine("CENTRALNA PEC");
             CentralHeater ch = new CentralHeater();
             ch.ispisUI();
 

@@ -21,9 +21,12 @@ namespace SmartThermoregulator
 
             Console.Clear();
 
-            //TODO Nakon zavrsnog testiranja Izmeniti da mora minimum 4 uredjaja i < 999
-            Console.WriteLine("Uneti broj uredjaja za citanje temperature: ");
-            int x = int.Parse(Console.ReadLine());
+            int x = 0;
+            do
+            {
+                Console.WriteLine("Uneti broj uredjaja za citanje temperature: ");
+                try { x = int.Parse(Console.ReadLine()); } catch { }
+            } while (x < 4 || x > 999);
 
             Process.Start(startInfo1);
             Process.Start(startInfo2);
