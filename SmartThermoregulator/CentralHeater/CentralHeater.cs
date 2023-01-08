@@ -94,16 +94,12 @@ namespace CentralHeater
             while (true)
             {
                 TcpClient client = listener.AcceptTcpClient();
-
-                Console.WriteLine("KONEKTOVAN REGULATOR NA PEC");
-
                 NetworkStream stream = client.GetStream();
 
                 byte[] data = new byte[256];
                 int bytes = stream.Read(data, 0, data.Length);
                 string request = Encoding.UTF8.GetString(data, 0, bytes);
 
-                Console.WriteLine("KOMANDA: " + request);
 
                 switch (request)
                 {
@@ -121,7 +117,6 @@ namespace CentralHeater
                     default:
                         break;
                 }
-                Console.WriteLine("PEC: " + isOn);
                 ispisUI();
 
                 client.Close();
@@ -165,14 +160,12 @@ namespace CentralHeater
             if (isOn)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                //Console.BackgroundColor = ConsoleColor.Green;
                 Console.WriteLine("UKLJUJCENA");
                 Console.ResetColor();
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                //Console.BackgroundColor = ConsoleColor.Red;
                 Console.WriteLine("ISKLJUCENA");
                 Console.ResetColor();
             }

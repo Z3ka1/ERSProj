@@ -11,7 +11,7 @@ namespace EFDataBase
         //TODO Proveriti na windowsu gde pravi db (Na macu je u home folderu)
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=infosTest.db");
+            optionsBuilder.UseSqlite("Data Source=infosDB.db");
         }
 
         public static void addInfo(TimeSpan runTime, DateTime startTime, double resourcesSpent)

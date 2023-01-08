@@ -10,6 +10,10 @@ namespace Common
         public bool IsOn();
 
         public TimeSpan GetRunTime();
+        public void receiveCommand();
+        public void waitNewDevice();
+        public void ispisUI();
+
     }
 }
 

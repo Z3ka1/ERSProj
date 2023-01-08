@@ -154,14 +154,12 @@ namespace ReadingDevice
         {
             while(true)
             {
-                //Da se temperatura ne bi menjala odmah nakon pozivanja funkcije /2
-                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000 / 2);
+                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000);
                 if(HeaterIsOn)
                     Temperature += Common.Constants.ReadingDeviceTempChange;
                 else
                     Temperature -= Common.Constants.ReadingDeviceTempChange;
 
-                Thread.Sleep(Common.Constants.ReadingDeviceTempChangeTime * 1000 / 2);
                 updateUI();
             }
 
@@ -185,23 +183,6 @@ namespace ReadingDevice
             return s;
         }
 
-
-        public static void Log(string logMessage, TextWriter w)
-        {
-            w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
-            w.WriteLine($"  :  {logMessage}");
-            w.WriteLine("-------------------------------");
-        }
-
-        public static void DumpLog(StreamReader r)
-        {
-            string line;
-            while ((line = r.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
-        }
-
         
     }
 
@@ -209,12 +190,6 @@ namespace ReadingDevice
     {
         static void Main(string[] args)
         {
-            //TODO Probati ovo na win
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                Console.SetWindowPosition(0, 0);
-            }
-
             Console.Clear();
             Console.WriteLine("UREDJAJ");
             ReadingDevice rd = new ReadingDevice();
@@ -244,70 +219,6 @@ namespace ReadingDevice
 
         }
 
-        /*
-        static ReadingDevice readingDevice = new ReadingDevice();
-        static Mutex m = new Mutex();
-        static void Main(string[] args)
-        {
-
-            while (true)
-            {
-                Console.WriteLine("Unesite ID:");
-                if (Int32.TryParse(Console.ReadLine(), out int id))
-                {
-                    readingDevice.Id = id;
-                    break;
-                }
-            }
-
-            while (true)
-            {
-                Console.WriteLine("Unesite inicijalnu temperaturu:");
-                if (double.TryParse(Console.ReadLine(), out double temp) && temp >= 0 && temp <= 35)
-                {
-                    readingDevice.Temperature = temp;
-                    break;
-                }
-            }
-
-           readingDevice.SendInitialMessage(readingDevice.Id, readingDevice.Temperature);  // Saljem inicijalnu poruku
-
-
-            Thread t1 = new Thread(new ThreadStart(Grijac));       // Pozivam nit koja povecava temperaturu ako je grijac upaljen
-            t1.Start();
-
-
-            while (true)
-            {
-                m.WaitOne();
-                readingDevice.sendTemperature();                        // Na svaka 3 minuta saljem poruku
-                m.ReleaseMutex();
-
-                Thread.Sleep(1000 * 60 * 3);
-            }
-        
-
-        }
-        
-        static void Grijac()
-        {
-            while (true)
-            {
-                // Ovde treba cekati poruku od servera i kad je primi provjeriti da li je upaljen grijac
-
-                bool upaljen = true;
-
-                if (upaljen)
-                {
-                    m.WaitOne();
-                    readingDevice.raiseTemperature();
-                    m.ReleaseMutex();
-                }
-            }
-
-           
-        }
-    */
     }
 }
 

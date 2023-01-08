@@ -24,7 +24,7 @@ namespace TemperatureRegulator
         //Lista temperatura 
         private Dictionary<Int32, double> temperatures;
 
-        //Govori da li je regulator u funkciji
+        //Za proveru da li je regulator poceo sa radom
         private bool working;
 
         public TemperatureRegulator()
@@ -34,6 +34,17 @@ namespace TemperatureRegulator
             nextCommand = Enums.Command.TurnOff;
             working = false;
             unosPodataka();
+
+            //false kako bi se obrisali prethodni podaci iz txt fajla
+            using (StreamWriter writer = new StreamWriter("regulatorLog.txt", false))
+            {
+                writer.WriteLine("\t\t\t--------------------------------------");
+                writer.WriteLine("\t\t\t|DNEVNI REZIM: " + dnevniPocetak + ":00 - " + dnevniKraj + ":00 Temp: " + dayTemperature + "|");
+                writer.WriteLine("\t\t\t|NOCNI REZIM:  " + dnevniKraj + ":00 - " + dnevniPocetak + ":00 Temp: " + nightTemperature + "|");
+                writer.WriteLine("\t\t\t--------------------------------------");
+                writer.WriteLine("\tDATUM I VREME DOGADJAJA\t\t\t\tDOGADJAJ");
+                writer.WriteLine("--------------------------------------------------------------------------------------------");
+            }
         }
 
         //metode za postavljanje temperature za odgovarajuci rezim
@@ -84,8 +95,6 @@ namespace TemperatureRegulator
             {
                 TcpClient client = listener.AcceptTcpClient();
 
-                //Console.WriteLine("PRIMLJEN");
-
                 NetworkStream stream = client.GetStream();
 
                 byte[] data = new byte[256];
@@ -95,15 +104,16 @@ namespace TemperatureRegulator
                 //parts[0] sadrzi id uredjaja, parts[1] sadrzi temperaturu uredjaja
                 string[] parts = request.Split(",");
 
-                temperatures[Int32.Parse(parts[0])] = double.Parse(parts[1]);
+                if (temperatures.ContainsKey(Int32.Parse(parts[0])))
+                    Log(String.Format("Pristigla temperatura '{0:0.00}' od uredjaja '{1}'",double.Parse(parts[1]), Int32.Parse(parts[0])));
+                else
+                    Log(String.Format("Uredjaj '{1}' je dodat u sistem sa temperaturom '{0:0.00}'", double.Parse(parts[1]), Int32.Parse(parts[0])));
 
-                //Console.WriteLine("Primljeno " + temperatures[Int32.Parse(parts[0])]);
+                temperatures[Int32.Parse(parts[0])] = double.Parse(parts[1]);
 
                 regulate();
 
                 client.Close();
-                //Console.WriteLine("KONEKCIJA SA UREDJAJEM ZATVORENA");
-                //Console.WriteLine();
             }
 
         }
@@ -125,12 +135,9 @@ namespace TemperatureRegulator
             {
                 Console.WriteLine("Regulator je poceo sa radom...");
                 working = true;
-            }
-
-
+                Log("Regulator je poceo sa radom!");
+            }  
             avgTemp = avgTemp / numOfReadings;
-
-            //Console.WriteLine("IZRACUNAO AVG = " + avgTemp);
 
             // Provera da li je potrebno upaliti ili ugasiti peć
             int currentHour = DateTime.Now.Hour;
@@ -163,20 +170,30 @@ namespace TemperatureRegulator
                 System.Environment.Exit(503);
             }
 
-            //Console.WriteLine("POSLAO PECI");
 
             if (previousCommand != nextCommand && temperatures.Count != 0)
             {
-                //Console.WriteLine("USAO U IF");
                 foreach (var tmp in temperatures)
                 {
-                    //Console.WriteLine("USAO U FOREACH");
-                    sendMessageToRegulator(nextCommand, Common.Constants.PortRegulatorDevice + tmp.Key);
-                    //Console.WriteLine("GOTOV FOREACH");
+                    try
+                    {
+                        sendMessageToDevice(nextCommand, Common.Constants.PortRegulatorDevice + tmp.Key);
+
+                    }
+                    catch
+                    {
+                        //U zadatku nije naglaseno sta raditi ukoliko u sistemu bude manje od 4 uredjaja
+                        //u jednom trenutku, u catchu se moze izmeniti desavanje po potrebi.
+                        Log("Uredjaj '" + tmp.Key + "' je pokvaren.");
+                    }
                 }
+                if (nextCommand == Enums.Command.TurnOn)
+                    Log("Poslata poruka svim uredjajima da je grejac UPALJEN!");
+                else if (nextCommand == Enums.Command.TurnOff)
+                    Log("Poslata poruka svim uredjajima da je grejac UGASEN!");
+
             }
             previousCommand = nextCommand;
-            //Console.WriteLine("REGULATE ZAVRSEN");
         }
 
 
@@ -195,8 +212,7 @@ namespace TemperatureRegulator
             client.Close();
         }
 
-
-        public void sendMessageToRegulator(Common.Enums.Command komanda, int port)
+        public void sendMessageToDevice(Common.Enums.Command komanda, int port)
         {
             TcpClient client = new TcpClient("localhost", port);
             NetworkStream stream = client.GetStream();
@@ -296,7 +312,14 @@ namespace TemperatureRegulator
             
         }
 
-
+        public void Log(string logMessage)
+        {
+            using (StreamWriter writer = new StreamWriter("regulatorLog.txt", true))
+            {
+                writer.WriteLine(DateTime.Now.ToLongDateString() + " | " + DateTime.Now.ToString("H:mm:ss") + " | " + logMessage);
+                writer.WriteLine("-------------------------------------");
+            }
+        }
 
     }
 

@@ -35,14 +35,17 @@ namespace TestReadingDevice
         [Test]
         public void TestRaiseTemperature()
         {
+            rd = new ReadingDevice.ReadingDevice();
             double initialTemp = rd.Temperature;
-            rd.raiseTemperature();
+            rd.HeaterIsOn = true;
+            rd.regulateTemperature();
             Assert.AreEqual(initialTemp + Common.Constants.ReadingDeviceTempChange, rd.Temperature);
         }
 
         [Test]
         public void TestToString()
         {
+            rd = new ReadingDevice.ReadingDevice();
             string expected = "Id: " + rd.Id + " Temperature: " + rd.Temperature.ToString("0.00");
             Assert.AreEqual(expected, rd.ToString());
         }
