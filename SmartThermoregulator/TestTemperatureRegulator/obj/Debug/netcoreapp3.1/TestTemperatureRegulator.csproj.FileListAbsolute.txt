@@ -263,3 +263,11 @@ D:/SADESKTOPA/Dusan/ERSProj/SmartThermoregulator/TestTemperatureRegulator/obj/De
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/EFDataBase.pdb
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/obj/Debug/netcoreapp3.1/TestTemperatureRegulator.csproj.CopyComplete
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/obj/Debug/netcoreapp3.1/TestTemperatureRegulator.genruntimeconfig.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/Castle.Core.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/Moq.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/ReadingDevice.deps.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/ReadingDevice.runtimeconfig.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/ReadingDevice.runtimeconfig.dev.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/ReadingDevice
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/ReadingDevice.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestTemperatureRegulator/bin/Debug/netcoreapp3.1/ReadingDevice.pdb

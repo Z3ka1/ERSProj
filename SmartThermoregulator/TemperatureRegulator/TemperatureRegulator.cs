@@ -12,17 +12,20 @@ namespace TemperatureRegulator
 {
     public class TemperatureRegulator : ITemperatureRegulator
     {
-        private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
-        private int nightTemperature;//polje za cuvanje temperature za nocni rezim
+        //private int dayTemperature; //polje za cuvanje temperature za dnevni rezim
+        //private int nightTemperature;//polje za cuvanje temperature za nocni rezim
 
-        Common.Enums.Command previousCommand;
-        Common.Enums.Command nextCommand;
+        public int dayTemperature { get; set; }
+        public int nightTemperature { get; set; }
+
+        public Common.Enums.Command previousCommand;
+        public Common.Enums.Command nextCommand;
 
         public int dnevniPocetak { get; set; }
         public int dnevniKraj { get; set; }
 
-        //Lista temperatura 
-        private Dictionary<Int32, double> temperatures;
+        //Lista temperatura , public zbog testiranja
+        public Dictionary<Int32, double> temperatures;
 
         //Za proveru da li je regulator poceo sa radom
         private bool working;
@@ -33,18 +36,7 @@ namespace TemperatureRegulator
             previousCommand = Enums.Command.TurnOff;
             nextCommand = Enums.Command.TurnOff;
             working = false;
-            unosPodataka();
 
-            //false kako bi se obrisali prethodni podaci iz txt fajla
-            using (StreamWriter writer = new StreamWriter("regulatorLog.txt", false))
-            {
-                writer.WriteLine("\t\t\t--------------------------------------");
-                writer.WriteLine("\t\t\t|DNEVNI REZIM: " + dnevniPocetak + ":00 - " + dnevniKraj + ":00 Temp: " + dayTemperature + "|");
-                writer.WriteLine("\t\t\t|NOCNI REZIM:  " + dnevniKraj + ":00 - " + dnevniPocetak + ":00 Temp: " + nightTemperature + "|");
-                writer.WriteLine("\t\t\t--------------------------------------");
-                writer.WriteLine("\tDATUM I VREME DOGADJAJA\t\t\t\tDOGADJAJ");
-                writer.WriteLine("--------------------------------------------------------------------------------------------");
-            }
         }
 
         //metode za postavljanje temperature za odgovarajuci rezim
@@ -331,6 +323,18 @@ namespace TemperatureRegulator
             Console.WriteLine("REGULATOR");
 
             TemperatureRegulator tr = new TemperatureRegulator();
+            tr.unosPodataka();
+            //false kako bi se obrisali prethodni podaci iz txt fajla
+            using (StreamWriter writer = new StreamWriter("regulatorLog.txt", false))
+            {
+                writer.WriteLine("\t\t\t--------------------------------------");
+                writer.WriteLine("\t\t\t|DNEVNI REZIM: " + tr.dnevniPocetak + ":00 - " + tr.dnevniKraj + ":00 Temp: " + tr.dayTemperature + "|");
+                writer.WriteLine("\t\t\t|NOCNI REZIM:  " + tr.dnevniKraj + ":00 - " + tr.dnevniPocetak + ":00 Temp: " + tr.nightTemperature + "|");
+                writer.WriteLine("\t\t\t--------------------------------------");
+                writer.WriteLine("\tDATUM I VREME DOGADJAJA\t\t\t\tDOGADJAJ");
+                writer.WriteLine("--------------------------------------------------------------------------------------------");
+            }
+
             Thread t1 = new Thread(tr.receiveTemperature);
 
             t1.Start();
