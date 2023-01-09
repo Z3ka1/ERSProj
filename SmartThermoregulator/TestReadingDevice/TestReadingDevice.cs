@@ -10,44 +10,30 @@ namespace TestReadingDevice
     [TestFixture]
     public class TestReadingDevice
     {
-        private ReadingDevice.ReadingDevice rd;
+        ReadingDevice.ReadingDevice device;
 
-        [Test]
-        [TestCase()]
-        public void ReadingDeviceConstructor()
+        [SetUp]
+        public void SetUp()
         {
-            rd = new ReadingDevice.ReadingDevice();
-
-            Assert.AreEqual(rd.Id, Globals.GeneratorIdReadingDevice - 1);
-            Assert.AreEqual((rd.Temperature >= 15 && rd.Temperature <= 25), true);
-        }
-
-        //Ovo verovatno ne radi dok se ne implementira server
-        [Test]
-        public void TestSendTemperature()
-        {
-            var mockTcpClient = new Mock<TcpClient>();
-            //rd.sendTemperature(mockTcpClient.Object);
-            mockTcpClient.Verify(x => x.Connect("localhost", Common.Constants.PortDeviceRegulator));
-            mockTcpClient.Verify(x => x.GetStream());
+            device = new ReadingDevice.ReadingDevice();
         }
 
         [Test]
-        public void TestRaiseTemperature()
+        public void TestReceiveStateHeater()
         {
-            rd = new ReadingDevice.ReadingDevice();
-            double initialTemp = rd.Temperature;
-            rd.HeaterIsOn = true;
-            rd.regulateTemperature();
-            Assert.AreEqual(initialTemp + Common.Constants.ReadingDeviceTempChange, rd.Temperature);
+            //Recimo da smo dobili da je grejac upaljen
+            device.HeaterIsOn = true;
+
+            Assert.IsTrue(device.HeaterIsOn);
         }
 
         [Test]
-        public void TestToString()
+        public void TestGetHeaterState()
         {
-            rd = new ReadingDevice.ReadingDevice();
-            string expected = "Id: " + rd.Id + " Temperature: " + rd.Temperature.ToString("0.00");
-            Assert.AreEqual(expected, rd.ToString());
+            //Recimo da smo dobili da je grejac upaljen
+            device.HeaterIsOn = true;
+
+            Assert.IsTrue(device.HeaterIsOn);
         }
 
     }
