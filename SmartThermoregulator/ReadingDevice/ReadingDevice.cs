@@ -22,15 +22,7 @@ namespace ReadingDevice
         public ReadingDevice()
         {
             lastState = "";
-            initialize();
-            try
-            {
-                getHeaterState();
-            }
-            catch
-            {
-                HeaterIsOn = false;
-            }
+            
         }
 
         //Koristi se pri pozivanju konstruktora i dobija se od Heatera
@@ -193,6 +185,15 @@ namespace ReadingDevice
             Console.Clear();
             Console.WriteLine("UREDJAJ");
             ReadingDevice rd = new ReadingDevice();
+            rd.initialize();
+            try
+            {
+                rd.getHeaterState();
+            }
+            catch
+            {
+                rd.HeaterIsOn = false;
+            }
 
             rd.updateUI();
 
