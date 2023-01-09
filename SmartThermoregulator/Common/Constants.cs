@@ -2,17 +2,16 @@
 
 namespace Common
 {
-	//TODO Izmeniti vrednosti na one zadata u zadatku
 	public static class Constants
 	{
-		//Broj sekundi na koje Reading Device proverava temperaturu
-		public const int ReadingDeviceCheckTime = 180; //seconds
+		//Broj sekundi na koje Reading Device proverava i salje temperaturu
+		public const int ReadingDeviceCheckTime = 180; //seconds (180)
 
 		//Broj sekundi za koje se temperatura menja
-		public const int ReadingDeviceTempChangeTime = 120; //seconds
+		public const int ReadingDeviceTempChangeTime = 120; //seconds (120)
 
 		//Broj za koji se menja temperatura kada je grejac ukljucen
-		public const double ReadingDeviceTempChange = 0.01; //Celsius
+		public const double ReadingDeviceTempChange = 0.01; //Celsius (0.01)
 
 		//Broj koji oznacava dozvoljeno odstupanje od zeljene temperature pri gasenju peci
 		//Kako se pec ne bi stalno palila i gasila
@@ -41,7 +40,7 @@ namespace Common
 		//(Port servera na CentralHeater-u)
 		public const int PortRegulatorHeater = 22000;
 
-		//Port za slanje stanja grejaca (Gde grejac salje port uredjaju)
+		//Port za slanje stanja grejaca (Gde grejac salje stanje uredjaju)
 		//(Port servera na CentralHeater-u)
 		public const int PortHeaterDevice = 23000;
 

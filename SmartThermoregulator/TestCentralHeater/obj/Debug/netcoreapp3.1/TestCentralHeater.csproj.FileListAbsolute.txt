@@ -257,3 +257,17 @@ D:/SADESKTOPA/Dusan/ERSProj/SmartThermoregulator/TestCentralHeater/obj/Debug/net
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/obj/Debug/netcoreapp3.1/TestCentralHeater.dll
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/obj/Debug/netcoreapp3.1/TestCentralHeater.pdb
 /Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/obj/Debug/netcoreapp3.1/TestCentralHeater.genruntimeconfig.cache
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/TemperatureRegulator.deps.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/TemperatureRegulator.runtimeconfig.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/TemperatureRegulator.runtimeconfig.dev.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/TemperatureRegulator
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/Castle.Core.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/Moq.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/TemperatureRegulator.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/TemperatureRegulator.pdb
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/ReadingDevice.deps.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/ReadingDevice.runtimeconfig.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/ReadingDevice.runtimeconfig.dev.json
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/ReadingDevice
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/ReadingDevice.dll
+/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/bin/Debug/netcoreapp3.1/ReadingDevice.pdb

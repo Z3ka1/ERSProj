@@ -224,14 +224,85 @@
         }
       }
     },
-    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj": {
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj",
-        "projectName": "TestCentralHeater",
-        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj",
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj",
+        "projectName": "ReadingDevice",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj",
         "packagesPath": "/Users/zeka/.nuget/packages/",
-        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/obj/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj",
+        "projectName": "TemperatureRegulator",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/zeka/.nuget/NuGet/NuGet.Config"
@@ -264,10 +335,94 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.1.31, 3.1.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj",
+        "projectName": "TestCentralHeater",
+        "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/TestCentralHeater.csproj",
+        "packagesPath": "/Users/zeka/.nuget/packages/",
+        "outputPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TestCentralHeater/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/zeka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/CentralHeater/CentralHeater.csproj"
+              },
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/Common/Common.csproj"
+              },
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/ReadingDevice/ReadingDevice.csproj"
+              },
+              "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj": {
+                "projectPath": "/Users/zeka/Documents/GitHub/ERSProj/SmartThermoregulator/TemperatureRegulator/TemperatureRegulator.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.7.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
             },
             "NUnit": {
               "target": "Package",

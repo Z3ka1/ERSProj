@@ -1,0 +1,114 @@
+Monday, 09 January 2023 | 16:32:01 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 16:33:12 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 16:33:52 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:17:01 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:17:14 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:17:26 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:17:34 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:17:47 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:18:19 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:33:41 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:34:35 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:35:10 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:35:24 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:35:31 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:35:52 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:36:01 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:40:06 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:40:27 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:42:55 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:43:10 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:43:27 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:45:55 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:46:30 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:46:38 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:47:28 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:49:52 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:50:48 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:51:15 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:52:15 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:52:20 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 17:52:37 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:11:55 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:12:01 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:12:44 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:18:28 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:21:24 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:22:31 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:46:18 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:47:16 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:47:22 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:47:34 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:47:49 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:48:01 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:48:16 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 19:55:01 | Uredjaj '1' je dodat u sistem sa temperaturom '19.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:55:40 | Uredjaj '1' je dodat u sistem sa temperaturom '19.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:57:18 | Uredjaj '19' je dodat u sistem sa temperaturom '13.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:57:18 | Uredjaj '89' je dodat u sistem sa temperaturom '12.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:57:31 | Uredjaj '1' je dodat u sistem sa temperaturom '20.00'
+-------------------------------------
+Monday, 09 January 2023 | 20:37:34 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:40:15 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:44:43 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:45:25 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:46:23 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:49:08 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:50:10 | Regulator je poceo sa radom!
+-------------------------------------
+Monday, 09 January 2023 | 20:53:21 | Regulator je poceo sa radom!
+-------------------------------------
