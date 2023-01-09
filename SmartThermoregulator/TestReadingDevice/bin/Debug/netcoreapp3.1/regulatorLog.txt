@@ -1,0 +1,16 @@
+Monday, 09 January 2023 | 17:34:33 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 17:47:42 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 18:35:36 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 18:36:01 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 18:36:36 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 18:39:04 | Uredjaj '13' je dodat u sistem sa temperaturom '12.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:59:05 | Uredjaj '1' je dodat u sistem sa temperaturom '30.00'
+-------------------------------------
+Monday, 09 January 2023 | 19:59:11 | Uredjaj '13' je dodat u sistem sa temperaturom '12.00'
+-------------------------------------
