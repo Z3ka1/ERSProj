@@ -1,0 +1,20 @@
+			--------------------------------------
+			|DNEVNI REZIM: 10:00 - 20:00 Temp: 22|
+			|NOCNI REZIM:  20:00 - 10:00 Temp: 18|
+			--------------------------------------
+	DATUM I VREME DOGADJAJA				DOGADJAJ
+--------------------------------------------------------------------------------------------
+Saturday, 13 September 2025 | 17:20:46 | Uredjaj '1' je dodat u sistem sa temperaturom '22.00'
+-------------------------------------
+Saturday, 13 September 2025 | 17:20:49 | Uredjaj '2' je dodat u sistem sa temperaturom '24.00'
+-------------------------------------
+Saturday, 13 September 2025 | 17:20:51 | Uredjaj '3' je dodat u sistem sa temperaturom '10.00'
+-------------------------------------
+Saturday, 13 September 2025 | 17:20:55 | Uredjaj '4' je dodat u sistem sa temperaturom '19.00'
+-------------------------------------
+Saturday, 13 September 2025 | 17:20:55 | Regulator je poceo sa radom!
+-------------------------------------
+Saturday, 13 September 2025 | 17:20:55 | Poslata poruka svim uredjajima da je grejac UPALJEN!
+-------------------------------------
+Saturday, 13 September 2025 | 17:21:04 | Pristigla temperatura '22.10' od uredjaja '1'
+-------------------------------------

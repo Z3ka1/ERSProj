@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Status Regulatora</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        margin-top: 2rem;
+        font-size: 2rem;
+        color: #2c3e50;
+      }
+
+      #status {
+        background-color: #ffffff;
+        padding: 2rem;
+        margin: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        max-width: 600px;
+        width: 90%;
+      }
+
+      #status p {
+        margin: 0.75rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      #status h3 {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+        color: #2980b9;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        #status {
+          padding: 1.5rem;
+        }
+
+        #status p {
+          font-size: 0.95rem;
+        }
+
+        #status h3 {
+          font-size: 1.1rem;
+        }
+      }
+
+      .device-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .device-card {
+        background-color: #ecf0f1;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        transition: background-color 0.3s ease;
+        position: relative;
+      }
+
+      .device-card.hot {
+        background-color: #ffdddd;
+        color: #c0392b;
+      }
+
+      .device-card.cold {
+        background-color: #ddeeff;
+        color: #2980b9;
+      }
+
+      .device-card.normal {
+        background-color: #e9f7ef;
+        color: #27ae60;
+      }
+
+      .device-card .icon {
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .status-on {
+        color: #27ae60;
+        font-weight: bold;
+      }
+
+      .status-off {
+        color: #c0392b;
+        font-weight: bold;
+      }
+
+      .split-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Smart Thermoregulator</h1>
+    <div id="status">Učitavanje podataka...</div>
+
+    <script>
+      async function fetchStatus() {
+        try {
+          const response = await fetch("http://localhost:5001/status/");
+          const data = await response.json();
+
+          const tempValues = Object.values(data.temperatures);
+          const averageTemp = tempValues.reduce((sum, val) => sum + val, 0) / tempValues.length;
+          const averageTempRounded = averageTemp.toFixed(2);
+
+          const currentHour = new Date().getHours();
+          const dayStart = parseInt(data.dnevniPocetak, 10);
+          const dayEnd = parseInt(data.dnevniKraj, 10);
+
+          let isDaytime;
+          if (dayStart < dayEnd) {
+            isDaytime = currentHour >= dayStart && currentHour < dayEnd;
+          } else {
+            isDaytime = currentHour >= dayStart || currentHour < dayEnd;
+          }
+
+          const targetTemp = isDaytime ? data.dayTemperature : data.nightTemperature;
+          const lowerBound = targetTemp - 1;
+          const upperBound = targetTemp + 1;
+
+          let temps = '<div class="device-grid">';
+          for (const [key, value] of Object.entries(data.temperatures)) {
+            let temp = value.toFixed(2);
+            let statusClass = "normal";
+            let icon = "🌡️";
+
+            if (value > upperBound) {
+              statusClass = "hot";
+              icon = "🔥";
+            } else if (value < lowerBound) {
+              statusClass = "cold";
+              icon = "❄️";
+            }
+
+            temps += `
+              <div class="device-card ${statusClass}">
+                <span class="icon">${icon}</span>
+                Uređaj ${key}<br/>
+                ${temp} °C
+              </div>
+            `;
+          }
+          temps += '</div>';
+
+
+          document.getElementById("status").innerHTML = `
+            <p><strong>Očekivana dnevna temperatura:</strong> ${data.dayTemperature} °C</p>
+            <p><strong>Očekivana noćna temperatura:</strong> ${data.nightTemperature} °C</p>
+            <p><strong>Dnevni režim:</strong> od ${data.dnevniPocetak}:00 do ${data.dnevniKraj}:00</p>
+            <p><strong>Regulator:</strong> ${isDaytime ? 'Dnevni režim ☀️' : 'Noćni režim 🌙'} </p>
+            <p><strong>Centralna peć:</strong> 
+              <span class = "${data.previousCommand === 'TurnOn' ? 'status-on' : 'status-off'}">
+                ${data.previousCommand === 'TurnOn' ? 'Uključena' : 'Isključena'}
+              </span>
+            </p>
+            <h3>Merenja uređaja:</h3>
+            <p><strong>Srednja izmerena temperatura: </strong> ${averageTempRounded} °C</p>
+            ${temps}
+          `;
+
+        } catch (error) {
+          document.getElementById("status").innerHTML = `<p style="color: red;">Greška, sistem nije u funkciji.</p>`;
+          console.error("Greška:", error);
+        }
+      }
+
+      setInterval(fetchStatus, 500);
+      fetchStatus();
+    </script>
+  </body>
+</html>

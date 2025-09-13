@@ -7,6 +7,8 @@ using System.Threading;
 using System.Net;
 using System.IO.MemoryMappedFiles;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ReadingDevice
 {
@@ -18,6 +20,9 @@ namespace ReadingDevice
 
         //Koristi se samo za UI
         private string lastState;
+        
+        private List<(DateTime time, double Temp)> tempHistory = new List<(DateTime, double)>();
+        
 
         public ReadingDevice()
         {
@@ -152,6 +157,13 @@ namespace ReadingDevice
                 else
                     Temperature -= Common.Constants.ReadingDeviceTempChange;
 
+                lock (tempHistory)
+                {
+                    tempHistory.Add((DateTime.Now, Temperature));
+                    if (tempHistory.Count > Common.Constants.MaxGraphHistory)
+                        tempHistory.RemoveAt(0);
+                }
+
                 updateUI();
             }
 
@@ -165,6 +177,94 @@ namespace ReadingDevice
             Console.WriteLine("{0,-25}  {1,-10}", "OBAVESTENJE", "VREME");
             Console.WriteLine("-------------------------------------");
             Console.WriteLine(lastState);
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            lock (tempHistory)
+            {
+                if (tempHistory.Count < 2)
+                {
+                    Console.WriteLine("Nema podataka za grafik.");
+                    return;
+                }
+
+                int graphHeight = 22;
+                int graphWidth = tempHistory.Count;
+
+                double minTemp = tempHistory.Min(t => t.Temp);
+                double maxTemp = tempHistory.Max(t => t.Temp);
+                double range = maxTemp - minTemp;
+                if (range < 1) range = 1; // minimum range
+
+                int[] barHeights = new int[graphWidth];
+                for (int i = 0; i < graphWidth; i++)
+                {
+                    double t = tempHistory[i].Temp;
+
+                    if (t < minTemp) t = minTemp;
+                    if (t > maxTemp) t = maxTemp;
+
+                    barHeights[i] = (int)Math.Round((t - minTemp) / range * graphHeight);
+                    //if (barHeights[i] == 0) barHeights[i] = 1;
+                }
+
+                int labelWidth = 6;
+
+                for (int row = graphHeight; row >= 0; row--)
+                {
+                    if (row == 0)
+                        Console.Write(" ".PadLeft(labelWidth + 1));
+                    else
+                    {
+                        double tempLabel = minTemp + ((double)(row - 1) / graphHeight) * range;
+                        string tempLabelStr = tempLabel.ToString("0.0").PadLeft(labelWidth - 1) + " ";
+                        Console.Write(tempLabelStr);
+                    }
+
+                    for (int col = 0; col < graphWidth; col++)
+                    {
+                        int fullBlocks = barHeights[col];  // integer bar height
+
+                        if (row <= fullBlocks && row != 0)
+                        {
+                            // Full block rows
+                            Console.Write("  ███  ");
+                        }
+                        else if (row == fullBlocks + 1 && row != 0)
+                        {
+                            // Half block row, always one above full blocks
+                            Console.Write("  ▄▄▄  ");
+                        }
+                        else if (row == 0)
+                        {
+                            Console.Write("_______");
+                        }
+                        else
+                        {
+                            Console.Write("       ");
+                        }
+
+                        // if (barHeights[col] >= row && row != 0)
+                        //     Console.Write("  ███  ");
+                        // else if (row == 0)
+                        //     Console.Write("_______");
+                        // else
+                        //     Console.Write("       ");
+                    }
+                    Console.WriteLine();
+                }
+
+                Console.Write(" ".PadLeft(labelWidth));
+                Console.Write(" ");
+                for (int col = 0; col < graphWidth; col++)
+                {
+                    string timeLabel = tempHistory[col].time.ToString("HH:mm");
+                    Console.Write(timeLabel + "  ");
+                }
+                Console.WriteLine();
+            }
+            
         }
 
 

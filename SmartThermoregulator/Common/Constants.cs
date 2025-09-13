@@ -5,13 +5,13 @@ namespace Common
 	public static class Constants
 	{
 		//Broj sekundi na koje Reading Device proverava i salje temperaturu
-		public const int ReadingDeviceCheckTime = 180; //seconds (180)
+		public const int ReadingDeviceCheckTime = 18; //seconds (180)
 
 		//Broj sekundi za koje se temperatura menja
-		public const int ReadingDeviceTempChangeTime = 120; //seconds (120)
+		public const int ReadingDeviceTempChangeTime = 12; //seconds (120)
 
 		//Broj za koji se menja temperatura kada je grejac ukljucen
-		public const double ReadingDeviceTempChange = 0.01; //Celsius (0.01)
+		public const double ReadingDeviceTempChange = 0.1; //Celsius (0.01)
 
 		//Broj koji oznacava dozvoljeno odstupanje od zeljene temperature pri gasenju peci
 		//Kako se pec ne bi stalno palila i gasila
@@ -43,6 +43,9 @@ namespace Common
 		//Port za slanje stanja grejaca (Gde grejac salje stanje uredjaju)
 		//(Port servera na CentralHeater-u)
 		public const int PortHeaterDevice = 23000;
+
+		//Koliko poslednjih ocitavanja temperature prikazujemo na grafiku
+		public const int MaxGraphHistory = 10;
 
 	}
 }

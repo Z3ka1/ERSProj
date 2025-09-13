@@ -7,6 +7,9 @@ using System.Net;
 using CentralHeater;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Text.Json;
+using System.Linq;
 
 namespace TemperatureRegulator
 {
@@ -97,7 +100,7 @@ namespace TemperatureRegulator
                 string[] parts = request.Split(",");
 
                 if (temperatures.ContainsKey(Int32.Parse(parts[0])))
-                    Log(String.Format("Pristigla temperatura '{0:0.00}' od uredjaja '{1}'",double.Parse(parts[1]), Int32.Parse(parts[0])));
+                    Log(String.Format("Pristigla temperatura '{0:0.00}' od uredjaja '{1}'", double.Parse(parts[1]), Int32.Parse(parts[0])));
                 else
                     Log(String.Format("Uredjaj '{1}' je dodat u sistem sa temperaturom '{0:0.00}'", double.Parse(parts[1]), Int32.Parse(parts[0])));
 
@@ -128,7 +131,7 @@ namespace TemperatureRegulator
                 Console.WriteLine("Regulator je poceo sa radom...");
                 working = true;
                 Log("Regulator je poceo sa radom!");
-            }  
+            }
             avgTemp = avgTemp / numOfReadings;
 
             // Provera da li je potrebno upaliti ili ugasiti peć
@@ -300,8 +303,8 @@ namespace TemperatureRegulator
             Console.WriteLine("Regulator");
             Console.WriteLine("DNEVNI REZIM: " + od + ":00 - " + doo + ":00 Temp: " + temperaturaDnevnog);
             Console.WriteLine("NOCNI REZIM:  " + doo + ":00 - " + od + ":00 Temp: " + temperaturaNocnog);
-            
-            
+
+
         }
 
         public void Log(string logMessage)
@@ -312,8 +315,62 @@ namespace TemperatureRegulator
                 writer.WriteLine("-------------------------------------");
             }
         }
+        public void StartHttpServer()
+        {
+            Task.Run(() =>
+            {
+                HttpListener listener = new HttpListener();
+                listener.Prefixes.Add("http://localhost:5001/status/");
+                listener.Start();
+
+                Console.WriteLine("HTTP API server pokrenut na http://localhost:5001/status/");
+
+                while (true)
+                {
+                    var context = listener.GetContext();
+                    var response = context.Response;
+                    var request = context.Request;
+
+                    if (request.HttpMethod == "OPTIONS")
+                    {
+                        response.StatusCode = 204;
+                        response.AddHeader("Access-Control-Allow-Origin", "*");
+                        response.AddHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+                        response.AddHeader("Access-Control-Allow-Headers", "Content-Type");
+                        response.OutputStream.Close();
+                        continue;
+                    }
+
+                    response.AddHeader("Access-Control-Allow-Origin", "*");
+                    response.ContentType = "application/json";
+
+                    var safeTemperatures = this.temperatures.ToDictionary(kvp => kvp.Key.ToString(), kvp => kvp.Value);
+
+                    // Prepare data
+                    var data = new
+                    {
+                        dayTemperature = this.dayTemperature,
+                        nightTemperature = this.nightTemperature,
+                        dnevniPocetak = this.dnevniPocetak,
+                        dnevniKraj = this.dnevniKraj,
+                        temperatures = safeTemperatures,
+                        previousCommand = this.previousCommand.ToString(),
+                        nextCommand = this.nextCommand.ToString()
+                    };
+
+                    string json = JsonSerializer.Serialize(data);
+
+                    byte[] buffer = Encoding.UTF8.GetBytes(json);
+                    response.ContentLength64 = buffer.Length;
+                    response.OutputStream.Write(buffer, 0, buffer.Length);
+                    response.OutputStream.Close();
+                }
+            });
+        }
+
 
     }
+    
 
     class Program
     {
@@ -324,6 +381,9 @@ namespace TemperatureRegulator
 
             TemperatureRegulator tr = new TemperatureRegulator();
             tr.unosPodataka();
+
+            tr.StartHttpServer();
+
             //false kako bi se obrisali prethodni podaci iz txt fajla
             using (StreamWriter writer = new StreamWriter("regulatorLog.txt", false))
             {
@@ -338,8 +398,6 @@ namespace TemperatureRegulator
             Thread t1 = new Thread(tr.receiveTemperature);
 
             t1.Start();
-
-
 
             Console.ReadLine();
         }
