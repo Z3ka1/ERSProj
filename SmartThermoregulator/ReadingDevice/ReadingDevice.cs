@@ -55,7 +55,7 @@ namespace ReadingDevice
         {
             while (true)
             {
-                Console.WriteLine("Unesite ID:");
+                Console.Write("Unesite broj uredjaja: ");
                 if (Int32.TryParse(Console.ReadLine(), out int id) && id >= 1 && id <= 999)
                 {
                     Id = id;
@@ -81,7 +81,7 @@ namespace ReadingDevice
 
             while (true)
             {
-                Console.WriteLine("Unesite inicijalnu temperaturu:");
+                Console.Write("Unesite inicijalnu temperaturu: ");
                 if (double.TryParse(Console.ReadLine(), out double temp) && temp >= 0 && temp <= 35)
                 {
                     Temperature = temp;
@@ -129,14 +129,14 @@ namespace ReadingDevice
 
                 if (request == "upaljena")
                 {
-                    lastState = String.Format("{0,-25} {1,-10}", "Grijac je poceo sa radom. ", DateTime.Now.ToString("H:mm:ss"));
+                    lastState = String.Format("{0,-25} {1,-10}", "Grejac je poceo sa radom. ", DateTime.Now.ToString("H:mm:ss"));
                     //Console.WriteLine("{0,-25} {1,-10}", "Grijac je poceo sa radom. ", DateTime.Now.ToString("H:mm:ss"));
                     updateUI();
                     HeaterIsOn = true;
                 }
                 else if(request == "ugasena")
                 {
-                    lastState = String.Format("{0,-25}  {1,-10}", "Grijac je zaustavio rad. ", DateTime.Now.ToString("H:mm:ss"));
+                    lastState = String.Format("{0,-25}  {1,-10}", "Grejac je zaustavio rad. ", DateTime.Now.ToString("H:mm:ss"));
                     //Console.WriteLine("{0,-25}  {1,-10}", "Grijac je zaustavio rad. ", DateTime.Now.ToString("H:mm:ss"));
                     updateUI();
                     HeaterIsOn = false;
@@ -172,7 +172,7 @@ namespace ReadingDevice
         public void updateUI()
         {
             Console.Clear();
-            Console.WriteLine("Uredjaj za merenje ID: " + Id);
+            Console.WriteLine("Uredjaj za merenje broj: " + Id);
             Console.WriteLine("Temperatura: {0:0.00}", Temperature);
             Console.WriteLine("{0,-25}  {1,-10}", "OBAVESTENJE", "VREME");
             Console.WriteLine("-------------------------------------");
@@ -189,7 +189,7 @@ namespace ReadingDevice
                     return;
                 }
 
-                int graphHeight = 22;
+                int graphHeight = 14;
                 int graphWidth = tempHistory.Count;
 
                 double minTemp = tempHistory.Min(t => t.Temp);

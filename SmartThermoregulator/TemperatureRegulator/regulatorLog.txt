@@ -1,20 +1,44 @@
 			--------------------------------------
-			|DNEVNI REZIM: 10:00 - 20:00 Temp: 22|
-			|NOCNI REZIM:  20:00 - 10:00 Temp: 18|
+			|DNEVNI REZIM: 10:00 - 22:00 Temp: 23|
+			|NOCNI REZIM:  22:00 - 10:00 Temp: 18|
 			--------------------------------------
 	DATUM I VREME DOGADJAJA				DOGADJAJ
 --------------------------------------------------------------------------------------------
-Saturday, 13 September 2025 | 17:20:46 | Uredjaj '1' je dodat u sistem sa temperaturom '22.00'
+Tuesday, 16 September 2025 | 18:03:48 | Uredjaj '1' je dodat u sistem sa temperaturom '23.00'
 -------------------------------------
-Saturday, 13 September 2025 | 17:20:49 | Uredjaj '2' je dodat u sistem sa temperaturom '24.00'
+Tuesday, 16 September 2025 | 18:03:52 | Uredjaj '2' je dodat u sistem sa temperaturom '23.40'
 -------------------------------------
-Saturday, 13 September 2025 | 17:20:51 | Uredjaj '3' je dodat u sistem sa temperaturom '10.00'
+Tuesday, 16 September 2025 | 18:03:55 | Uredjaj '3' je dodat u sistem sa temperaturom '22.10'
 -------------------------------------
-Saturday, 13 September 2025 | 17:20:55 | Uredjaj '4' je dodat u sistem sa temperaturom '19.00'
+Tuesday, 16 September 2025 | 18:04:00 | Uredjaj '4' je dodat u sistem sa temperaturom '22.50'
 -------------------------------------
-Saturday, 13 September 2025 | 17:20:55 | Regulator je poceo sa radom!
+Tuesday, 16 September 2025 | 18:04:00 | Regulator je poceo sa radom!
 -------------------------------------
-Saturday, 13 September 2025 | 17:20:55 | Poslata poruka svim uredjajima da je grejac UPALJEN!
+Tuesday, 16 September 2025 | 18:04:00 | Poslata poruka svim uredjajima da je grejac UPALJEN!
 -------------------------------------
-Saturday, 13 September 2025 | 17:21:04 | Pristigla temperatura '22.10' od uredjaja '1'
+Tuesday, 16 September 2025 | 18:04:06 | Pristigla temperatura '23.10' od uredjaja '1'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:10 | Pristigla temperatura '23.50' od uredjaja '2'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:13 | Pristigla temperatura '22.20' od uredjaja '3'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:18 | Pristigla temperatura '22.60' od uredjaja '4'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:24 | Pristigla temperatura '23.20' od uredjaja '1'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:28 | Pristigla temperatura '23.60' od uredjaja '2'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:31 | Pristigla temperatura '22.30' od uredjaja '3'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:36 | Pristigla temperatura '22.70' od uredjaja '4'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:42 | Pristigla temperatura '23.40' od uredjaja '1'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:46 | Pristigla temperatura '23.80' od uredjaja '2'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:49 | Pristigla temperatura '22.50' od uredjaja '3'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:04:54 | Pristigla temperatura '22.90' od uredjaja '4'
+-------------------------------------
+Tuesday, 16 September 2025 | 18:05:00 | Pristigla temperatura '23.50' od uredjaja '1'
 -------------------------------------
